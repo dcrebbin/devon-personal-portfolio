@@ -323,7 +323,7 @@ export const PROJECTS = [
     elevatorPitch: "Guitar hero-like pixel art cowboy duels",
     status: "Released (Alpha)",
     techStack: "Unity C#",
-    imageUrl: "/games/cowboytaptap.jpg",
+    imageUrl: "/games/cowboytaptap.png",
     role: "Software, Graphics",
     link: null,
   },

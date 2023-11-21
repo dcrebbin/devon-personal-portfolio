@@ -163,7 +163,7 @@ export const PROJECTS = [
     elevatorPitch: "Relaxed infinite runner",
     status: "Released (Alpha)",
     techStack: "Unity C#",
-    imageUrl: "/games/kitsune.png",
+    imageUrl: "/games/kitsune.jpg",
     role: "Software & Graphics",
     link: null,
   },

@@ -5,8 +5,8 @@ import { PROJECTS } from "../constants";
 
 <Layout title="Welcome to Astro.">
   <main>
-    <div class="flex flex-col items-center">
-      <h1 class="m-0 p-0 flex w-full text-start justify-start h-1">Hi</h1>
+    <div class="flex flex-col items-center font-mono">
+      <h1 class="m-0 p-0 flex w-full text-start justify-start h-1 font-sans">Hi</h1>
       <h2>I'm Devon<br />&nbsp;&nbsp; here is everything I've made</h2>
       <h3 class="text-sm">Software Developer (of sorts)</h3>
       <div class="">
@@ -21,7 +21,7 @@ import { PROJECTS } from "../constants";
               return project.type == "title" ? (
                 <h2 class="w-full text-center text-2xl font-bold">{project.text}</h2>
               ) : (
-                <div class="text-sm">
+                <div class="text-sm font-mono">
                   <p>
                     <b>Project:</b>
                     {project.project}

@@ -1,6 +1,5 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import Card from "../components/Card.astro";
 import { PROJECTS } from "../constants";
 ---
 
@@ -11,7 +10,7 @@ import { PROJECTS } from "../constants";
       <h2>I'm Devon<br />&nbsp;&nbsp; here is everything I've made</h2>
       <h3 class="text-sm">Software Developer (of sorts)</h3>
       <div class="">
-        <p class="w-80 text-center text-xs">Realtively serious enquires for my Australian Govt Innovation Portfolio</p>
+        <p class="w-80 text-center text-xs my-2">Relatively serious <a class="underline" href="mailto:devon@artvuu.group">enquires</a> for my Australian Govt Innovation Portfolio</p>
       </div>
     </div>
     <div class="flex flex-col items-center">
@@ -48,7 +47,7 @@ import { PROJECTS } from "../constants";
                     </p>
                   )}
                   <div class="w-full flex justify-center">
-                    <img class="max-h-[24rem] m-4" src={"/public/projects/" + project.imageUrl} alt={project.project} />
+                    <img class="max-h-[24rem] m-4" src={"/projects/" + project.imageUrl} alt={project.project} />
                   </div>
                   <hr class="p-2"></hr>
                 </div>

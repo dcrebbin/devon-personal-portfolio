@@ -272,7 +272,7 @@ export const PROJECTS = [
   {
     type: "project",
     project: "Poly Mountain",
-    elevatorPitch: "Hyper Casual",
+    elevatorPitch: "Hyper Casual 2D infinite runner",
     status: "Purgatory",
     techStack: "Unity C#",
     imageUrl: "/games/quackers-party.jpg",

@@ -22,6 +22,9 @@ import { PROJECTS } from "../constants";
                 <h2 class="w-full text-center text-2xl font-bold">{project.text}</h2>
               ) : (
                 <div class="text-sm font-mono">
+                  <div class="w-full flex justify-center">
+                    <img class="max-h-[24rem] m-4" src={"/projects/" + project.imageUrl} alt={project.project} />
+                  </div>
                   <p>
                     <b>Project:</b>
                     {project.project}
@@ -40,15 +43,12 @@ import { PROJECTS } from "../constants";
                     <b>Role:</b> {project.role}
                   </p>
                   {project.link == null ? null : (
-                    <p class="w-full flex items-center justify-center">
+                    <p class="w-full flex items-center justify-center m-2">
                       <a href={project.link} class="font-bold">
                         Find out more
                       </a>
                     </p>
                   )}
-                  <div class="w-full flex justify-center">
-                    <img class="max-h-[24rem] m-4" src={"/projects/" + project.imageUrl} alt={project.project} />
-                  </div>
                   <hr class="p-2"></hr>
                 </div>
               );

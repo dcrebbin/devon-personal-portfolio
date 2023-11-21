@@ -91,7 +91,7 @@ export const PROJECTS = [
     techStack: "Dart",
     imageUrl: "/misc/jyutping-for-flutter.png",
     role: "Software",
-    link: null,
+    link: "https://pub.dev/packages/jyutping",
   },
   {
     type: "project",
@@ -131,7 +131,7 @@ export const PROJECTS = [
     techStack: "Nextjs, Prisma, Tailwind, TRPC",
     imageUrl: "/web-apps/indigilang.png",
     role: "Software & Graphics",
-    link: null,
+    link: "https://indigilang.com.au",
   },
   {
     type: "project",
@@ -141,7 +141,7 @@ export const PROJECTS = [
     techStack: "Nextjs, Tailwind",
     imageUrl: "/web-apps/artvuu-group.png",
     role: "Software, Graphics",
-    link: null,
+    link: "https://artvuu.group",
   },
   {
     type: "title",
@@ -187,16 +187,16 @@ export const PROJECTS = [
     role: "Software, Graphics & Music",
     link: null,
   },
-  {
-    type: "project",
-    project: "Quackers Party",
-    elevatorPitch: "Duck based voice controlled party game",
-    status: "Purgatory",
-    techStack: "Unity C#",
-    imageUrl: "/games/quackers-party.jpg",
-    role: "Software, Graphics",
-    link: null,
-  },
+//   {
+//     type: "project",
+//     project: "Quackers Party",
+//     elevatorPitch: "Duck based voice controlled party game",
+//     status: "Purgatory",
+//     techStack: "Unity C#",
+//     imageUrl: "/games/quackers-party.jpg",
+//     role: "Software, Graphics",
+//     link: null,
+//   },
   {
     type: "project",
     project: "dashfl0w",

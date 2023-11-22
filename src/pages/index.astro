@@ -5,14 +5,15 @@ import { PROJECTS } from "../constants";
 
 <Layout title="Welcome to Astro.">
   <main>
-    <div class="flex flex-col items-center font-mono pt-14">
-      <h1 class="m-0 p-0 flex w-full text-start justify-start h-1 font-sans">Hi</h1>
-      <h2>I'm Devon<br />&nbsp;&nbsp; here is everything I've made</h2>
-      <h3 class="text-sm">Garawa-Wanyi-Gangalidda-British Software Developer (of sorts)</h3>
-      <div class="">
-        <p class="w-80 text-center text-xs my-2">Relatively serious <a class="underline" href="mailto:devon@artvuu.group">enquires</a> for my Australian Govt Innovation Portfolio</p>
+    <div class="flex flex-col items-center font-mono mt-16 bg-[#C3C3C3]  border-4 border-t-white border-b-black/80 border-r-gray-400">
+      <div class="flex text-md w-full bg-[#FF607F] p-1">
+        <h2 class="m-0 p-0 flex w-full text-start justify-startfont-sans mx-2">Hi!</h2>
       </div>
-     
+      <h2 class="">I'm Devon</h2>
+      <h2 class="">here is everything I've made</h2>
+      <h3 class="w-full text-center">Garawa-Wanyi-Gangalidda-British Software Developer (of sorts)</h3>
+        <p class="w-80 text-xs text-center my-2">Relatively serious <a class="underline" href="mailto:devon@artvuu.group">enquires</a> for my Australian Govt Innovation Portfolio</p>
+      <a href="https://www.linkedin.com/in/devon-crebbin/" class="border-2 border-t-white border-b-black/80 border-r-gray-400 m-2">LinkedIn</a>
     </div>
     <div class="flex flex-col items-center">
       <div>
@@ -20,7 +21,7 @@ import { PROJECTS } from "../constants";
           {
             PROJECTS.map((project) => {
               return project.type == "title" ? (
-                <h2 class="w-full text-center text-2xl font-bold">{project.text}</h2>
+                <h2 class="w-full text-center text-2xl font-mono">{project.text}</h2>
               ) : (
                 <div class="text-sm font-mono">
                   <div class="w-full flex justify-center">
@@ -56,6 +57,13 @@ import { PROJECTS } from "../constants";
             })
           }
         </div>
+      </div>
+    </div>
+    
+    <div class="w-full flex items-center justify-center">
+      <div class="border-4 border-t-white border-b-black/80 border-r-gray-400 flex flex-col bg-white items-center">
+        <img class="w-full" src={"/thx.png"} />
+        <a href="mailto:devon@artvuu.group" class="bg-white border-2 text-black border-t-black/50 border-b-black/80 border-r-gray-400 w-fit m-4 px-2">email</a>
       </div>
     </div>
   </main>

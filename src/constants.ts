@@ -135,6 +135,16 @@ export const PROJECTS = [
   },
   {
     type: "project",
+    project: "langpal",
+    elevatorPitch: "An app for learning character based languages (like Mandarin, Cantonese, Korean etc).",
+    status: "Released (Alpha)",
+    techStack: "Flutter",
+    imageUrl: "/mobile-apps/langpal.png",
+    role: "Software & Graphics",
+    link: "https://www.withlangpal.com",
+  },
+  {
+    type: "project",
     project: "Artvuu Group",
     elevatorPitch: "Portfolio website for Artvuu Group",
     status: "Released",
@@ -264,6 +274,16 @@ export const PROJECTS = [
     imageUrl: "/mobile-apps/metro-it.png",
     role: "Software, Graphics",
     link: null,
+  },
+  {
+    type: "project",
+    project: "sition",
+    elevatorPitch: "An app to convert your Spotify playlists into Youtube playlists",
+    status: "Released (OpenSource)",
+    techStack: "Flutter",
+    imageUrl: "/mobile-apps/sition.png",
+    role: "Software & Graphics",
+    link: "https://www.withlangpal.com",
   },
   {
     type: "title",

@@ -391,4 +391,18 @@ export const PROJECTS = [
     role: "Software, Graphics",
     link: null,
   },
+  {
+    type: "title",
+    text: "2013 & Before 💀💀",
+  },
+  {
+    type: "project",
+    project: "A Bouncers Calculator",
+    elevatorPitch: "Utility app for bouncers to determine if a person is allowed to enter a venue",
+    status: "Released",
+    techStack: "Windows Phone",
+    imageUrl: null,
+    role: "Software, Graphics",
+    link: null,
+  },
 ];

@@ -13,15 +13,15 @@ import Email from "../icons/Email.astro";
     <div class="w-[1000px] flex text-center">
       <div class="m-14 bg-white w-[300px] h-fit rounded-3xl p-4 text-2xl z-20">
         <div class="flex items-center justify-between">
-          <p>Hey!👋</p>
+          <div class="flex"><p>Hey!</p><button class="hover:-translate-y-2 cursor-pointer" onclick="alert('Howdy 🤠')">👋</button></div>
           <div class="flex">
-            <a href="mailto:devon@artvuu.group" target="_blank">
+            <a href="mailto:devon@artvuu.group" class="hover:-translate-y-[2px]" target="_blank">
               <Email />
             </a>
-            <a href="https://github.com/dcrebbin" target="_blank">
+            <a href="https://github.com/dcrebbin" class="hover:-translate-y-[2px]" target="_blank">
               <Github />
             </a>
-            <a href="https://www.linkedin.com/in/devoncrebbin/" target="_blank">
+            <a href="https://www.linkedin.com/in/devoncrebbin/" class="hover:-translate-y-[2px]" target="_blank">
               <LinkedIn />
             </a>
           </div>

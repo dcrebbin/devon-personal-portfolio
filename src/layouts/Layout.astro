@@ -12,21 +12,24 @@
     <p>I acknowledge the Traditional Owners of the land on which I live and work. I pay my respects to Elders past, present.</p>
     <p>Sovereignty never ceded 🖤💛❤️</p>
   </div> -->
-
+  <img src="/assets/skyGradientPiece.png" alt="Devon Crebbin" class="w-full object-cover absolute top-0" />
   <body>
     <slot />
   </body>
+
+  <style is:global>
+    :root {
+      --accent: 136, 58, 234;
+      --accent-light: 224, 204, 250;
+      --accent-dark: 49, 10, 101;
+      --accent-gradient: linear-gradient(45deg, rgb(var(--accent)), rgb(var(--accent-light)) 30%, white 60%);
+    }
+    html {
+      font-family: "Socake";
+      background: #0ce7ff;
+      height: 100vh;
+    }
+  </style>
+
+
 </html>
-<style is:global>
-  :root {
-    --accent: 136, 58, 234;
-    --accent-light: 224, 204, 250;
-    --accent-dark: 49, 10, 101;
-    --accent-gradient: linear-gradient(45deg, rgb(var(--accent)), rgb(var(--accent-light)) 30%, white 60%);
-  }
-  html {
-    font-family: 'Socake';
-    background: #0CE7FF;
-    height: 100vh;
-  }
-</style>

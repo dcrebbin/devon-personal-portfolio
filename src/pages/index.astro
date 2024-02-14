@@ -4,20 +4,10 @@ import { PROJECTS } from "../constants";
 ---
 
 <Layout title="Welcome to Astro.">
-  <main>
-    <div class="flex flex-col items-center font-mono mt-16 bg-[#C3C3C3]  border-4 border-t-white border-b-black/80 border-r-gray-400">
-      <div class="flex text-md w-full bg-[#FF607F] p-1">
-        <h2 class="m-0 p-0 flex w-full text-start justify-startfont-sans mx-2">Hi!</h2>
-      </div>
-      <h2 class="">I'm Devon</h2>
-      <h2 class="">here is everything I've made</h2>
-      <h3 class="w-full text-center">Garawa-Wanyi-Gangalidda-British Software Developer (of sorts)</h3>
-        <p class="w-80 text-xs text-center my-2">Relatively serious <a class="underline" href="mailto:devon@artvuu.group">enquires</a> for my Australian Govt Innovation Portfolio</p>
-      <a href="https://www.linkedin.com/in/devon-crebbin/" class="border-2 border-t-white border-b-black/80 border-r-gray-400 m-2">LinkedIn</a>
-    </div>
-    <div class="flex flex-col items-center">
-      <div>
-        <div>
+  <main class="flex h-[100vh]">
+   <div class="w-[1000px] bg-red-500">Devon Crebbin</div>
+    <div class="w-full h-[100vh]  bg-red-300 p-20">
+    <div class="flex flex-col items-center p-20 overflow-y-scroll h-full bg-blue-400">
           {
             PROJECTS.map((project) => {
               return project.type == "title" ? (
@@ -58,74 +48,11 @@ import { PROJECTS } from "../constants";
               );
             })
           }
-        </div>
-      </div>
     </div>
-    
-    <div class="w-full flex items-center justify-center">
-      <div class="border-4 border-t-white border-b-black/80 border-r-gray-400 flex flex-col bg-white items-center">
-        <img class="w-full" src={"/thx.png"} />
-        <a href="mailto:devon@artvuu.group" class="bg-white border-2 text-black border-t-black/50 border-b-black/80 border-r-gray-400 w-fit m-4 px-2">email</a>
-      </div>
-    </div>
+
+  </div>
+
+   
   </main>
 
-  <style>
-    main {
-      margin: auto;
-      padding: 1rem;
-      width: 800px;
-      max-width: calc(100% - 2rem);
-      color: white;
-      font-size: 20px;
-      line-height: 1.6;
-    }
-    .astro-a {
-      position: absolute;
-      top: -32px;
-      left: 50%;
-      transform: translatex(-50%);
-      width: 220px;
-      height: auto;
-      z-index: -1;
-    }
-    h1 {
-      font-size: 4rem;
-      font-weight: 700;
-      line-height: 1;
-      text-align: center;
-      margin-bottom: 1em;
-    }
-    .text-gradient {
-      background-image: var(--accent-gradient);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-size: 400%;
-      background-position: 0%;
-    }
-    .instructions {
-      margin-bottom: 2rem;
-      border: 1px solid rgba(var(--accent-light), 25%);
-      background: linear-gradient(rgba(var(--accent-dark), 66%), rgba(var(--accent-dark), 33%));
-      padding: 1.5rem;
-      border-radius: 8px;
-    }
-    .instructions code {
-      font-size: 0.8em;
-      font-weight: bold;
-      background: rgba(var(--accent-light), 12%);
-      color: rgb(var(--accent-light));
-      border-radius: 4px;
-      padding: 0.3em 0.4em;
-    }
-    .instructions strong {
-      color: rgb(var(--accent-light));
-    }
-    .link-card-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
-      gap: 2rem;
-      padding: 0;
-    }
-  </style>
 </Layout>

@@ -11,7 +11,7 @@ export const PROJECTS = [
     techStack: "Vite/Ts/React",
     imageUrl: "/misc/gpt-enhanced.png",
     role: "Software & Graphics",
-    openSourceLink: null,
+    openSourceLink: "https://github.com/dcrebbin/chatgpt-enhanced-extension",
     link: null,
   },
   {
@@ -22,7 +22,7 @@ export const PROJECTS = [
     techStack: "Angular/Go Fiber",
     imageUrl: "/web-apps/gemini-coach.jpg",
     role: "Software & Graphics",
-    openSourceLink: null,
+    openSourceLink: "https://github.com/dcrebbin/gemini-coach",
     link: "https://gemini-coach.vercel.app/",
   },
   {
@@ -33,7 +33,7 @@ export const PROJECTS = [
     techStack: "Nextjs/Tailwind",
     imageUrl: "/web-apps/up-it-quest.png",
     role: "Software & Graphics",
-    openSourceLink: null,
+    openSourceLink: "https://github.com/dcrebbin/ai-interview-trainer-frontend",
     link: "https://upit.quest/",
   },
   {
@@ -68,6 +68,7 @@ export const PROJECTS = [
     techStack: "Bun, Typescript",
     imageUrl: "/misc/glasses-food-log.png",
     role: "Software & Graphics",
+    openSourceLink: "https://github.com/dcrebbin/meta-vision-api",
     link: "https://www.youtube.com/watch?v=PiEDrcLCmew",
   },
   {
@@ -78,7 +79,7 @@ export const PROJECTS = [
     techStack: "Nextjs, Prisma, Tailwind",
     imageUrl: "/web-apps/ourland.png",
     role: "Software & Graphics",
-    link: "https://ourland.au",
+    link: "https://land.org.au",
   },
   {
     type: "project",

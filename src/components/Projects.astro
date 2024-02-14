@@ -1,9 +1,11 @@
 ---
 import { PROJECTS } from "../constants";
+import Github from "../icons/Github.astro";
+import Website from "../icons/Website.astro"
 ---
-<div class="flex flex-col items-start overflow-clip bg-white/80 backdrop-blur-sm rounded-3xl drop-shadow-lg p-4">
+<div class="flex flex-col items-start overflow-clip bg-white/80 backdrop-blur-sm rounded-3xl drop-shadow-lg p-4 font-">
 	<h2 class="text-3xl">My Projects</h2>
-	<div class="flex">
+	<div class="flex text-2xl">
 		<div class="flex flex-col justify-center h-[700px] pt-4">
 			<a href="#2024" class="hover:underline">2024</a>
 			<div class="border-l-2 h-full ml-4 border-black"></div>
@@ -23,44 +25,25 @@ import { PROJECTS } from "../constants";
 			<div class="border-l-2 h-full ml-4 border-black"></div>
 			<a href="#2016..." class="hover:underline">2016...</a>
 		</div>
-	<div class="p-10 overflow-y-scroll h-[100vh]">
+	<div class="p-10 overflow-y-scroll h-[100vh] flex flex-col items-center">
 	{
-	  PROJECTS.map((project) => {
+	  PROJECTS.map((project:any) => {
 		return project.type == "title" ? (
-		  <h2 class="w-full text-center text-2xl font-mono" id={`${project.text}`}>{project.text}</h2>
+				<h2 class="w-full text-center text-2xl underline mb-8" id={`${project.text}`}>{project.text}</h2>
 		) : (
-		  <div class="text-sm font-mono">
-			<div class="w-full flex justify-center">
+			<div class="flex flex-col w-fit items-center justify-center">
+				<div class="flex items-center gap-2">
+					<h3 class="text-2xl">{project.project}</h3>
+					{project.link == null ? null :<a class="hover:-translate-y-[2px] hover:cursor-pointer" href={project.link} target="_blank"><Website/></a> }
+					{project.openSourceLink == null ? null :<a class="hover:-translate-y-[2px] hover:cursor-pointer" href={project.openSourceLink} target="_blank"><Github/></a>}
+					</div>
+				<h3 class="text-xl">{project.elevatorPitch}</h3>
 			  {project.imageUrl !== null ?
 				<img class="max-h-[24rem] m-4" src={"/projects" + project.imageUrl} alt={project.project} />
 			  : <p class="italic p-2">No image available</p>}
+			  <p class="p-2 text-xl">Stack: {project.techStack}</p>
 			</div>
-			<p>
-			  <b>Project:</b>
-			  {project.project}
-			</p>
-			<p>
-			  <b>Elevator Pitch:</b>
-			  {project.elevatorPitch}
-			</p>
-			<p>
-			  <b>Status:</b> {project.status}
-			</p>
-			<p>
-			  <b>Tech:</b> {project.techStack}
-			</p>
-			<p>
-			  <b>Role:</b> {project.role}
-			</p>
-			{project.link == null ? null : (
-			  <p class="w-full flex items-center justify-center p-2">
-				<a href={project.link} class="font-bold">
-				  Find out more
-				</a>
-			  </p>
-			)}
-			<hr class="p-2"></hr>
-		  </div>
+			<hr class="p-2 w-full"></hr>
 		);
 	  })
 	}

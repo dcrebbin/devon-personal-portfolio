@@ -1,58 +1,33 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import { PROJECTS } from "../constants";
+import Projects from "../components/Projects.astro";
+import Github from "../icons/Github.astro";
+import LinkedIn from "../icons/LinkedIn.astro";
+import Email from "../icons/Email.astro";
 ---
 
 <Layout title="Welcome to Astro.">
   <main class="flex h-[100vh]">
-   <div class="w-[1000px] bg-red-500">Devon Crebbin</div>
-    <div class="w-full h-[100vh]  bg-red-300 p-20">
-    <div class="flex flex-col items-center p-20 overflow-y-scroll h-full bg-blue-400">
-          {
-            PROJECTS.map((project) => {
-              return project.type == "title" ? (
-                <h2 class="w-full text-center text-2xl font-mono">{project.text}</h2>
-              ) : (
-                <div class="text-sm font-mono">
-                  <div class="w-full flex justify-center">
-                    {project.imageUrl !== null ?
-                      <img class="max-h-[24rem] m-4" src={"/projects" + project.imageUrl} alt={project.project} />
-                    : <p class="italic p-2">No image available</p>}
-                  </div>
-                  <p>
-                    <b>Project:</b>
-                    {project.project}
-                  </p>
-                  <p>
-                    <b>Elevator Pitch:</b>
-                    {project.elevatorPitch}
-                  </p>
-                  <p>
-                    <b>Status:</b> {project.status}
-                  </p>
-                  <p>
-                    <b>Tech:</b> {project.techStack}
-                  </p>
-                  <p>
-                    <b>Role:</b> {project.role}
-                  </p>
-                  {project.link == null ? null : (
-                    <p class="w-full flex items-center justify-center p-2">
-                      <a href={project.link} class="font-bold">
-                        Find out more
-                      </a>
-                    </p>
-                  )}
-                  <hr class="p-2"></hr>
-                </div>
-              );
-            })
-          }
+    <div class="w-[1000px] bg-red-500 flex text-center">
+      <div class="m-10 bg-white w-[300px] h-fit rounded-3xl p-4 text-2xl">
+        <div class="flex items-center justify-between">
+          <p>Hey!👋</p>
+          <div class="flex">
+            <a href="mailto:devon@artvuu.group" target="_blank">
+              <Email />
+            </a>
+            <a href="https://github.com/dcrebbin" target="_blank">
+              <Github />
+            </a>
+            <a href="https://www.linkedin.com/in/devoncrebbin/" target="_blank">
+              <LinkedIn />
+            </a>
+          </div>
+        </div><p>I'm Devon Crebbin</p><p class="text-sm">A developer, of sorts</p>
+      </div>
     </div>
-
-  </div>
-
-   
+    <div class="w-full h-[100vh] bg-red-300 p-20">
+      <Projects />
+    </div>
   </main>
-
 </Layout>

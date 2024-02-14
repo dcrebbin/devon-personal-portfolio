@@ -1,0 +1,45 @@
+---
+import { PROJECTS } from "../constants";
+---
+<div class="flex flex-col items-center p-20 overflow-y-scroll h-full bg-blue-400">
+	{
+	  PROJECTS.map((project) => {
+		return project.type == "title" ? (
+		  <h2 class="w-full text-center text-2xl font-mono">{project.text}</h2>
+		) : (
+		  <div class="text-sm font-mono">
+			<div class="w-full flex justify-center">
+			  {project.imageUrl !== null ?
+				<img class="max-h-[24rem] m-4" src={"/projects" + project.imageUrl} alt={project.project} />
+			  : <p class="italic p-2">No image available</p>}
+			</div>
+			<p>
+			  <b>Project:</b>
+			  {project.project}
+			</p>
+			<p>
+			  <b>Elevator Pitch:</b>
+			  {project.elevatorPitch}
+			</p>
+			<p>
+			  <b>Status:</b> {project.status}
+			</p>
+			<p>
+			  <b>Tech:</b> {project.techStack}
+			</p>
+			<p>
+			  <b>Role:</b> {project.role}
+			</p>
+			{project.link == null ? null : (
+			  <p class="w-full flex items-center justify-center p-2">
+				<a href={project.link} class="font-bold">
+				  Find out more
+				</a>
+			  </p>
+			)}
+			<hr class="p-2"></hr>
+		  </div>
+		);
+	  })
+	}
+</div>

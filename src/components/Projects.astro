@@ -5,29 +5,29 @@ import { PROJECTS } from "../constants";
 	<h2 class="text-3xl">My Projects</h2>
 	<div class="flex">
 		<div class="flex flex-col justify-center h-[700px] pt-4">
-			<a href="#2024">2024</a>
+			<a href="#2024" class="hover:underline">2024</a>
 			<div class="border-l-2 h-full ml-4 border-black"></div>
-			<a href="#2023">2023</a>
+			<a href="#2023" class="hover:underline">2023</a>
 			<div class="border-l-2 h-full ml-4 border-black"></div>
-			<a href="#2022">2022</a>
+			<a href="#2022" class="hover:underline">2022</a>
 			<div class="border-l-2 h-full ml-4 border-black"></div>
-			<a href="#2021">2021</a>
+			<a href="#2021" class="hover:underline">2021</a>
 			<div class="border-l-2 h-full ml-4 border-black"></div>
-			<a href="#2020">2020</a>
+			<a href="#2020" class="hover:underline">2020</a>
 			<div class="border-l-2 h-full ml-4 border-black"></div>
-			<a href="#2019">2019</a>
+			<a href="#2019" class="hover:underline">2019</a>
 			<div class="border-l-2 h-full ml-4 border-black"></div>
-			<a href="#2018">2018</a>
+			<a href="#2018" class="hover:underline"> 2018</a>
 			<div class="border-l-2 h-full ml-4 border-black"></div>
-			<a href="#2017">2017</a>
+			<a href="#2017" class="hover:underline">2017</a>
 			<div class="border-l-2 h-full ml-4 border-black"></div>
-			<a href="#2016">2016...</a>
+			<a href="#2016..." class="hover:underline">2016...</a>
 		</div>
 	<div class="p-10 overflow-y-scroll h-[100vh]">
 	{
 	  PROJECTS.map((project) => {
 		return project.type == "title" ? (
-		  <h2 class="w-full text-center text-2xl font-mono">{project.text}</h2>
+		  <h2 class="w-full text-center text-2xl font-mono" id={`${project.text}`}>{project.text}</h2>
 		) : (
 		  <div class="text-sm font-mono">
 			<div class="w-full flex justify-center">

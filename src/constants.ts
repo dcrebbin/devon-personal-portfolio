@@ -366,7 +366,7 @@ export const PROJECTS = [
   },
   {
     type: "title",
-    text: "2016 & Before",
+    text: "2016...",
   },
   {
     type: "project",

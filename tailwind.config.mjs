@@ -2,13 +2,13 @@
 const defaultTheme = require("tailwindcss/defaultTheme");
 
 export default {
-	content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
-	theme: {
-		extend: {
-			fontFamily: {
-				sans:["Socake",...defaultTheme.fontFamily.sans],
-			}
-		},
-	},
-	plugins: [],
-}
+  content: ["./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}"],
+  theme: {
+    extend: {
+      fontFamily: {
+        sans: ["Socake", ...defaultTheme.fontFamily.sans],
+      },
+    },
+  },
+  plugins: [],
+};

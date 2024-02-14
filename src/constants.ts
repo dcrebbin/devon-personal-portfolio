@@ -1,6 +1,43 @@
 export const PROJECTS = [
   {
     type: "title",
+    text: "2024",
+  },
+  {
+    type: "project",
+    project: "GPT Enhanced",
+    elevatorPitch: "Adding Whisper to chat.openai.com",
+    status: "In Development",
+    techStack: "Angular/Go Fiber",
+    imageUrl: "/web-apps/gemini-coach.jpg",
+    role: "Software & Graphics",
+    openSourceLink: null,
+    link: "https://gemini-coach.vercel.app/",
+  },
+  {
+    type: "project",
+    project: "Gemini Coach",
+    elevatorPitch: "AI HR Coach for Googlers",
+    status: "In Development",
+    techStack: "Angular/Go Fiber",
+    imageUrl: "/web-apps/gemini-coach.jpg",
+    role: "Software & Graphics",
+    openSourceLink: null,
+    link: "https://gemini-coach.vercel.app/",
+  },
+  {
+    type: "project",
+    project: "Up It Quest",
+    elevatorPitch: "Open source Leetcode Coaching",
+    status: "In Development",
+    techStack: "Nextjs/Tailwind",
+    imageUrl: "/web-apps/up-it-quest.png",
+    role: "Software & Graphics",
+    openSourceLink: null,
+    link: "https://upit.quest/",
+  },
+  {
+    type: "title",
     text: "2023",
   },
   {

@@ -3,10 +3,10 @@ import { PROJECTS } from "../constants";
 import Github from "../icons/Github.astro";
 import Website from "../icons/Website.astro"
 ---
-<div class="flex flex-col items-start overflow-clip bg-white/80 backdrop-blur-sm rounded-3xl drop-shadow-lg p-4 font-">
+<div class="flex flex-col items-start bg-white/80 backdrop-blur-sm rounded-3xl drop-shadow-lg p-4">
 	<h2 class="text-3xl">My Projects</h2>
 	<div class="flex text-2xl">
-		<div class="flex flex-col justify-center h-[700px] pt-4">
+		<div class="flex flex-col justify-center pt-4">
 			<a href="#2024" class="hover:underline">2024</a>
 			<div class="border-l-2 h-full ml-4 border-black"></div>
 			<a href="#2023" class="hover:underline">2023</a>
@@ -25,7 +25,7 @@ import Website from "../icons/Website.astro"
 			<div class="border-l-2 h-full ml-4 border-black"></div>
 			<a href="#2016..." class="hover:underline">2016...</a>
 		</div>
-	<div class="p-10 overflow-y-scroll h-[100vh] flex flex-col items-center">
+	<div class="p-10 overflow-y-scroll h-[75vh] flex flex-col items-center">
 	{
 	  PROJECTS.map((project:any) => {
 		return project.type == "title" ? (

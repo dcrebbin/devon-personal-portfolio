@@ -7,7 +7,9 @@ import Email from "../icons/Email.astro";
 ---
 
 <Layout>
-  <main class="flex h-[100vh] bg-[url('/assets/bigHill.png')] bg-no-repeat bg-fixed bg-[center_top_16rem]">
+  <main class="flex h-[100vh] bg-[url('/assets/bigHill.png')] bg-no-repeat bg-fixed bg-[center_top_18rem]">
+    <img src="/assets/skyGradientPiece.png" alt="A piece of the skybox" class="w-full object-cover absolute top-0 z-10 opacity-40" />
+    <img src="/assets/sun.png" alt="The Sun" class="w-auto left-[30%] object-cover absolute top-0 z-0 " />
     <div class="w-[1000px] flex text-center">
       <div class="m-14 bg-white w-[300px] h-fit rounded-3xl p-4 text-2xl z-20">
         <div class="flex items-center justify-between">
@@ -25,9 +27,12 @@ import Email from "../icons/Email.astro";
           </div>
         </div><p>I'm Devon Crebbin</p><p class="text-sm">A developer, of sorts</p>
       </div>
-      <img src="/assets/devon.png" class="w-auto h-[10rem] absolute left-72 top-48" />
+      <div id="player">
+        <img src="/assets/devon.png" alt="Devon Crebbin" class="w-auto h-[10rem] absolute left-72 top-48 z-40" />
+        <div class="w-[3rem] h-[1.5rem] bg-black/30 rounded-full blur-sm absolute left-[20.7rem] top-[20.9rem] z-30"></div>
+      </div>
     </div>
-    <div class="w-full p-20 flex">
+    <div class="w-full p-20 flex z-[99]">
       <Projects />
     </div>
   </main>

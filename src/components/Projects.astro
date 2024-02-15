@@ -1,12 +1,13 @@
 ---
 import { PROJECTS } from "../constants";
 import Github from "../icons/Github.astro";
-import Website from "../icons/Website.astro"
+import Website from "../icons/Website.astro";
 ---
-<div class="flex flex-col items-start bg-white/80 backdrop-blur-sm rounded-3xl drop-shadow-lg p-4">
-	<h2 class="text-3xl">My Projects</h2>
-	<div class="flex text-2xl">
-		<div class="flex flex-col justify-center pt-4">
+
+<div class="flex flex-col items-start bg-white/80 backdrop-blur-sm rounded-3xl drop-shadow-lg h-fit w-full p-4 mt-36">
+  <h2 class="text-3xl">My Projects</h2>
+    <div class="flex flex-row justify-center pt-4">
+		<div class="flex flex-col">
 			<a href="#2024" class="hover:underline">2024</a>
 			<div class="border-l-2 h-full ml-4 border-black"></div>
 			<a href="#2023" class="hover:underline">2023</a>
@@ -25,8 +26,8 @@ import Website from "../icons/Website.astro"
 			<div class="border-l-2 h-full ml-4 border-black"></div>
 			<a href="#2016..." class="hover:underline">2016...</a>
 		</div>
-	<div class="p-10 overflow-y-scroll h-[75vh] flex flex-col items-center">
-	{
+    <div class="p-4 overflow-y-scroll flex flex-col items-center h-[75vh] w-fit">
+      {
 	  PROJECTS.map((project:any) => {
 		return project.type == "title" ? (
 				<h2 class="w-full text-center text-2xl underline mb-8" id={`${project.text}`}>{project.text}</h2>
@@ -39,7 +40,7 @@ import Website from "../icons/Website.astro"
 					</div>
 				<h3 class="text-xl">{project.elevatorPitch}</h3>
 			  {project.imageUrl !== null ?
-				<img class="max-h-[24rem] m-4" src={"/projects" + project.imageUrl} alt={project.project} />
+				<img class="max-h-[20rem] m-4" src={"/projects" + project.imageUrl} alt={project.project} />
 			  : <p class="italic p-2">No image available</p>}
 			  <p class="p-2 text-xl">Stack: {project.techStack}</p>
 			</div>
@@ -47,7 +48,6 @@ import Website from "../icons/Website.astro"
 		);
 	  })
 	}
-	</div>
-</div>
-
+    </div>
+  </div>
 </div>

@@ -5,12 +5,13 @@ import PlayerScene from "../components/PlayerScene.astro";
 ---
 
 <Layout>
-  <main class="flex h-[100vh] w-[100vw] bg-[url('/assets/bigHill.png')] bg-no-repeat bg-cover bg-[center_top_18rem]">
-    <img src="/assets/skyGradientPiece.png" alt="A piece of the skybox" class="w-full object-cover absolute top-0 z-10 opacity-40" />
-    <img src="/assets/sun.png" alt="The Sun" class="w-auto left-[30%] object-cover absolute top-0 z-0" />
-    <div class="grid" style={{gridTemplateColumns:"auto auto auto"}}>
+  <main class="flex] w-[100vw] relative bg-[url('/assets/bigHill.png')] bg-no-repeat bg-bottom object-top">
+    <!-- <img src="/assets/bigHill.png" alt="A big hill" class="scale-[5] absolute z-0 bottom-0" /> -->
+    <img src="/assets/skyGradientPiece.png" alt="A piece of the skybox" class="absolute top-20 z-10 opacity-40" />
+    <img src="/assets/sun.png" alt="The Sun" class="w-auto left-[-10%] object-cover absolute -top-16 z-0 scale-50" />
+    <div class="grid min-w-full" style={{ gridTemplateColumns: "auto" }}>
       <PlayerScene />
-      <div class="w-full p-20 flex z-[99] h-[100vh]">
+      <div class="min-w-full flex z-[99] justify-center p-4">
         <Projects />
       </div>
     </div>

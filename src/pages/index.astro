@@ -5,20 +5,12 @@ import PlayerScene from "../components/PlayerScene.astro";
 ---
 
 <Layout>
-  <main class="flex h-full w-[100vw] relative bg-[url('/assets/bigHill.png')] bg-no-repeat lg:bg-[center_top_17rem] bg-[center_top_15rem]">
-    <!-- <div class="flex flex-col-reverse z-[199]">
-      <p class="text-5xl text-red-500 sm:hidden">6</p>
-      <p class="text-5xl text-red-500 md:hidden">5</p>
-      <p class="text-5xl text-red-500 lg:hidden">4</p>
-      <p class="text-5xl text-red-500 xl:hidden">3</p>
-      <p class="text-5xl text-red-500 2xl:hidden">2</p>
-      <p class="text-5xl text-red-500">1</p>
-    </div> -->
+  <main class="flex lg:h-full h-max w-[100vw] relative bg-[url('/assets/bigHill.png')] bg-no-repeat bg-[center_top_18rem]">
     <img src="/assets/skyGradientPiece.png" alt="A piece of the skybox" class="absolute lg:top-20 top-8 z-10 opacity-40" />
-    <img src="/assets/sun.png" alt="The Sun" class="w-auto lg:left-[30%]  object-cover absolute z-0 lg:scale-100 scale-50" />
-    <div class="grid min-w-full grid-cols-2">
+    <img src="/assets/sun.png" alt="The Sun" class="w-auto lg:left-[30%] object-cover absolute z-0 lg:scale-100 scale-50" />
+    <div class="grid min-w-full lg:grid-flow-col">
       <PlayerScene />
-      <div class="w-full flex z-[99] justify-center p-4">
+      <div class="w-full flex z-[99] justify-center px-4 xl:px-28 lg:px-16 md:px-8 ">
         <Projects />
       </div>
     </div>

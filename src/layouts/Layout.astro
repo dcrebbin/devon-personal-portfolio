@@ -8,12 +8,18 @@
     <meta name="generator" content={Astro.generator} />
     <title>Portfolio</title>
     <link rel="stylesheet" href="/_astro/src/global.css" />
+    <style>
+      @font-face {
+        font-family: "Socake";
+        src: url("/fonts/socake.ttf");
+      }
+    </style>
   </head>
   <!-- <div class="text-xs text-center fixed backdrop-blur-sm p-3 flex flex-col font-bold gap-1 w-full text-white">
     <p>I acknowledge the Traditional Owners of the land on which I live and work. I pay my respects to Elders past, present.</p>
     <p>Sovereignty never ceded 🖤💛❤️</p>
   </div> -->
-  <body>
+  <body style={{ overflowY: "scroll" }}>
     <slot />
   </body>
 
@@ -29,7 +35,7 @@
       background: #0ce7ff;
       height: 100%;
     }
-    body{
+    body {
       height: 100%;
     }
   </style>

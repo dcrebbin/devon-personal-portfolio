@@ -3,9 +3,53 @@ import InfoModal from "./InfoModal.astro";
 ---
 
 <div class="flex text-center">
+  <script>
+    function setup() {
+      const player = document.getElementById("player");
+      if (!player) return;
+      const playerImg = player.querySelector("img");
+      if (!playerImg) return;
+      const playerWidth = playerImg.width;
+      const playerHeight = playerImg.height;
+      let playerX = player.offsetLeft;
+      let playerY = player.offsetTop;
+      const playerCenterX = playerX + playerWidth / 2;
+      const playerCenterY = playerY + playerHeight / 2;
+      const playerSpeed = 5;
+
+      let nextX = playerX;
+      let nextY = playerY;
+      function movePlayer() {
+        const dx = nextX - playerX;
+        const dy = nextY - playerY;
+        const distance = Math.sqrt(dx * dx + dy * dy);
+        if (distance < playerSpeed) {
+          playerX = nextX;
+          playerY = nextY;
+        } else {
+          playerX += (dx / distance) * playerSpeed;
+          playerY += (dy / distance) * playerSpeed;
+        }
+        player!.style.left = `${playerX}px`;
+        player!.style.top = `${playerY}px`;
+      }
+
+      document.addEventListener("mousedown", (e) => {
+        console.log("move");
+        nextX = e.clientX - playerWidth / 2;
+        nextY = e.clientY - playerHeight / 2;
+        console.log(player.style.left, player.style.top);
+        // player.style.left = `${nextX}px`;
+        // player.style.top = `${nextY}px`;
+      });
+
+      setInterval(movePlayer, 1000 / 60);
+    }
+    window.addEventListener("load", setup);
+  </script>
   <InfoModal />
-  <div id="player">
-    <img src="/assets/devon.png" alt="Devon Crebbin" class="w-auto h-[10rem] absolute left-64 top-48 z-40" />
-    <div class="w-[3rem] h-[1.5rem] bg-black/30 rounded-full blur-sm absolute left-[18.8rem] top-[20.9rem] z-30"></div>
+  <div id="player" class="absolute left-64 top-48 z-40">
+    <img src="/assets/devon.png" alt="Devon Crebbin" class="w-auto h-[10rem]" />
+    <!-- <div class="w-[3rem] h-[1.5rem] bg-black/30 rounded-full blur-sm absolute left-[18.8rem] top-[20.9rem] z-30"></div> -->
   </div>
 </div>

@@ -87,6 +87,7 @@ export const PROJECTS = [
     imageUrl: "/misc/chat-watch.png",
     role: "Software",
     link: null,
+    verticalAspectRatio: true,
   },
   {
     type: "project",
@@ -97,6 +98,7 @@ export const PROJECTS = [
     imageUrl: "/misc/econ.png",
     role: "Software",
     link: null,
+    verticalAspectRatio: true,
   },
   {
     type: "project",
@@ -107,6 +109,7 @@ export const PROJECTS = [
     imageUrl: "/misc/hanzi-quiz.png",
     role: "Software",
     link: null,
+    verticalAspectRatio: true,
   },
   {
     type: "project",
@@ -150,11 +153,11 @@ export const PROJECTS = [
     type: "project",
     project: "Crunchy Scraper",
     elevatorPitch: "A web scraper to generate an ordered list of the top rated anime on Crunchyroll",
-    status: "Released",
+    status: "Unreleased",
     techStack: "Javascript",
     imageUrl: "/misc/crunchy-roll-scraper.png",
     role: "Software",
-    link: "Unreleased",
+    link: null,
   },
   {
     type: "project",
@@ -292,6 +295,7 @@ export const PROJECTS = [
     imageUrl: "/mobile-apps/sition.png",
     role: "Software & Graphics",
     link: "https://github.com/dcrebbin/spotify-to-youtube-music",
+    verticalAspectRatio: true,
   },
   {
     type: "title",
@@ -305,6 +309,7 @@ export const PROJECTS = [
     imageUrl: "/games/poly-mountain.jpg",
     role: "Software, Graphics",
     link: "https://play.google.com/store/apps/details?id=com.PrototypePurgatory.PolyMountain",
+    verticalAspectRatio: true,
   },
   {
     type: "project",
@@ -316,7 +321,6 @@ export const PROJECTS = [
     link: "https://play.google.com/store/apps/details?id=com.PrototypePurgatory.MazeFlow",
   },
   {
-    type: "title",
     text: "2018",
   },
   {

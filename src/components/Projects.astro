@@ -41,7 +41,7 @@ import Website from "../icons/Website.astro";
 					</div>
 				<h3 class="text-xl">{project.elevatorPitch}</h3>
 			  {project.imageUrl !== null ?
-				<img class={"w-full h-fit m-4 " + project.verticalAspectRatio && project.verticalAspectRatio == true ? "w-[50%]" : ""} src={"/projects" + project.imageUrl} alt={project.project} />
+				<img class={"w-full h-fit m-4 rounded-md " + project.verticalAspectRatio && project.verticalAspectRatio == true ? "w-[50%]" : ""} src={"/projects" + project.imageUrl} alt={project.project} />
 			  : <p class="italic p-2">No image available</p>}
 			  <p class="p-2 text-xl">Stack: {project.techStack}</p>
 			</div>

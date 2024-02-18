@@ -1,7 +1,7 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Projects from "../components/Projects.astro";
-import PlayerScene from "../components/PlayerScene.astro";
+import PlayerScene from "../components/PlayerScene";
 ---
 
 <Layout>
@@ -10,7 +10,7 @@ import PlayerScene from "../components/PlayerScene.astro";
     <img src="/assets/skyGradientPiece.png" alt="A piece of the skybox" class="absolute lg:top-20 top-8 z-10 opacity-40" />
     <img src="/assets/sun.png" alt="The Sun" class="w-auto lg:left-[30%] object-cover absolute z-0 lg:scale-100 scale-50" />
     <div class="grid min-w-full lg:grid-flow-col">
-      <PlayerScene />
+      <PlayerScene client:load  />
       <div class="w-full flex z-[99] justify-center px-4 xl:px-28 lg:px-16 md:px-8">
         <Projects />
       </div>

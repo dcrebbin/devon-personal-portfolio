@@ -22,13 +22,18 @@ import InfoModal from "./InfoModal.astro";
       let bounds = boundsElement.getBoundingClientRect();
 
       function movePlayer() {
-        console.log(bounds.left, bounds.right, bounds.top, bounds.bottom);
+        if (!playerImg) return;
+        if (nextX < playerX && nextX != playerX) {
+          playerImg.style.transform = "scaleX(1)";
+        } else if (nextX != playerX) {
+          playerImg.style.transform = "scaleX(-1)";
+        }
+
         if (nextX < bounds.left) nextX = bounds.left;
         if (nextX + playerWidth > bounds.right) nextX = bounds.right - playerWidth;
         if (nextY < bounds.top) nextY = bounds.top;
         if (nextY + playerHeight > bounds.bottom) nextY = bounds.bottom - playerHeight;
 
-        console.log(nextY);
         const dx = nextX - playerX;
         const dy = nextY - playerY;
         const distance = Math.sqrt(dx * dx + dy * dy);

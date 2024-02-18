@@ -78,7 +78,7 @@ export default function PlayerScene() {
   };
 
   return (
-    <div>
+    <div className="z-50">
       <InfoModal />
       <div id="player" className="absolute left-64 top-48 z-40">
         <div className="h-[10rem] w-[5rem] relative" id="playerSprite">

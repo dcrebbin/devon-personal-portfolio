@@ -6,6 +6,7 @@ export default function PlayerScene() {
   const [isMoving, setIsMoving] = useState(false);
 
   useEffect(() => {
+    //clean this up
     const player = document.getElementById("player");
     const playerSprite = document.getElementById("playerSprite");
 
@@ -78,9 +79,8 @@ export default function PlayerScene() {
   };
 
   return (
-    <div className="z-50">
-      <InfoModal />
-      <div id="player" className="absolute left-64 top-48 z-40">
+    <div className="z-[80]">
+      <div id="player" className="absolute left-64 top-48 z-[30]">
         <div className="h-[10rem] w-[5rem] relative" id="playerSprite">
           <motion.img src="/assets/player/head.png" animate={isMoving ? { translateY: [0, -8] } : { translateY: [] }} transition={animationTransition} className="absolute left-[-3px]" alt="Devon Crebbin" />
           <motion.img src="/assets/player/body.png" animate={isMoving ? { translateY: [0, -10] } : { translateY: [] }} transition={animationTransition} className="absolute top-[2.5rem] z-40" alt="Devon Crebbin" />

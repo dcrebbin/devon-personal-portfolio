@@ -4,7 +4,7 @@ import Email from "../icons/Email";
 
 export default function InfoModal() {
   return (
-    <div className="m-14 bg-white w-64 h-fit rounded-l-3xl rounded-tr-3xl p-4 text-2xl z-30">
+    <div className="m-14 bg-white w-64 h-fit rounded-l-3xl rounded-tr-3xl p-4 text-2xl z-[100]">
       <div className="flex items-center justify-between">
         <div className="flex">
           <p>Hey!</p>

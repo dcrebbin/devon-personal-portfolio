@@ -2,12 +2,15 @@
 import { PROJECTS } from "../constants";
 import Github from "../icons/Github";
 import Website from "../icons/Website";
+import Down from "../icons/Down";
 ---
 
 <div class="w-full xl:w-[80%] flex flex-col items-start bg-white/80 backdrop-blur-sm rounded-3xl drop-shadow-lg h-fit p-4 lg:mt-10 mt-36">
   <h2 class="text-3xl">My Projects</h2>
     <div class="flex flex-row pt-4 w-full gap-2">
 		<div class="flex flex-col w-8 p-3">
+			<a href="#main" class="hover:underline">Main</a>
+			<div class="border-l-2 h-full ml-4 border-black"></div>
 			<a href="#2024" class="hover:underline">2024</a>
 			<div class="border-l-2 h-full ml-4 border-black"></div>
 			<a href="#2023" class="hover:underline">2023</a>
@@ -27,13 +30,59 @@ import Website from "../icons/Website";
 			<a href="#2016..." class="hover:underline">2016...</a>
 		</div>
     <div class="p-4 md:px-10 2xl:px-20 overflow-y-scroll flex flex-col items-center h-[75vh] w-full ">
+		<div class="w-full text-center p-2">
+			<h2 class="text-2xl" id="main">Main Projects</h2>
+			<grid class="grid grid-cols-2 gap-4">
+				<div class="flex flex-col justify-center items-center">
+					<div class="flex gap-2 items-center">
+						<h3>Ourland</h3>
+						<a class="hover:-translate-y-[2px] hover:cursor-pointer" href={"https://land.org.au"} target="_blank"><Website/></a>
+						<a href="#Ourland"><Down/></a>
+					</div>
+					<p>Indigenous Digital Map & Non Profit</p>
+					<img src="/projects/web-apps/ourland.png"/>
+				</div>
+				<div class="flex flex-col items-center">
+					<div class="flex gap-2 items-center">
+						<h3>langpal</h3>
+						<a class="hover:-translate-y-[2px] hover:cursor-pointer" href={"https://withlangpal.com"} target="_blank"><Website/></a>
+						<a href="#langpal"><Down/></a>
+					</div>
+					<p>Cantonese & Mandarin Phrasebook</p>
+					
+					<img src="/projects/mobile-apps/langpal.png"/>
+				</div>
+				<div class="flex flex-col items-center">
+					<div class="flex gap-2 items-center">
+						<h3>Meta Glasses GPT Vision API</h3>
+						<a class="hover:-translate-y-[2px] hover:cursor-pointer" href={"https://www.youtube.com/watch?v=PiEDrcLCmew"} target="_blank"><Website/></a>
+						<a class="hover:-translate-y-[2px] hover:cursor-pointer" href={"https://github.com/dcrebbin/meta-vision-api"} target="_blank"><Github/></a>
+						<a href="#Meta Glasses - GPT4 Vision (Food Log)"><Down/></a>
+					</div>
+					<p>Indigenous Digital Map</p>
+					<img  src="/projects/misc/glasses-food-log.png"/>
+				</div>
+				<div class="flex flex-col items-center">
+					<div class="flex gap-2 items-center">
+						<h3>Up It Quest</h3>
+						<a class="hover:-translate-y-[2px] hover:cursor-pointer" href={"https://upit.quest"} target="_blank"><Website/></a>
+						<a class="hover:-translate-y-[2px] hover:cursor-pointer" href={"https://github.com/dcrebbin/ai-interview-trainer-frontend"} target="_blank"><Github/></a>
+						<a href="#Up It Quest"><Down/></a>
+					</div>
+					<p>AI powered leetcode coach</p>
+					<img src="/projects/web-apps/up-it-quest.png"/>
+				</div>
+			</grid>
+		</div>
+		<hr class="p-2 w-full"></hr>
+		<h2 class="text-2xl">Project Timeline</h2>
       {
 	  PROJECTS.map((project:any) => {
 		return project.type == "title" ? (
 				<h2 class="w-full text-center text-2xl underline mb-8" id={`${project.text}`}>{project.text}</h2>
 		) : (
 			<div class="flex flex-col w-fit items-center justify-center h-min">
-				<div class="flex items-center gap-2">
+				<div class="flex items-center gap-2" id={project.project}>
 					<h3 class="text-2xl">{project.project}</h3>
 					{project.link == null ? <p>{project.status}</p> :<a class="hover:-translate-y-[2px] hover:cursor-pointer" href={project.link} target="_blank"><Website/></a> }
 					{project.openSourceLink == null ? null :<a class="hover:-translate-y-[2px] hover:cursor-pointer" href={project.openSourceLink} target="_blank"><Github/></a>}

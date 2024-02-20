@@ -1,5 +1,5 @@
 ---
-import Sun from "../components/Sun";
+import Sky from "../components/Sky";
 ---
 
 <!doctype html>
@@ -23,10 +23,8 @@ import Sun from "../components/Sun";
     <p>I acknowledge the Traditional Owners of the land on which I live and work. I pay my respects to Elders past, present.</p>
     <p>Sovereignty never ceded 🖤💛❤️</p>
   </div> -->
-  <div class="w-full h-6 flex text-center absolute justify-center p-2">Site in development</div>
+  <div class="w-full h-6 flex text-center absolute justify-center p-2 z-[100] text-white">Site in development</div>
   <body>
-    <Sun client:load />
-
     <slot />
   </body>
 
@@ -39,7 +37,6 @@ import Sun from "../components/Sun";
     }
     html {
       font-family: "Socake";
-      background: #0ce7ff;
     }
     body {
       height: 100vh;

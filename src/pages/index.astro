@@ -3,18 +3,23 @@ import Layout from "../layouts/Layout.astro";
 import Projects from "../components/Projects.astro";
 import PlayerScene from "../components/PlayerScene";
 import InfoModal from "../components/InfoModal";
+import Sun from "../components/Sun";
+import Sky from "../components/Sky";
 ---
 
 <Layout>
-  <main class="flex lg:h-full h-max w-[100vw] z-[50] relative bg-[url('/assets/bigHill.png')] bg-no-repeat bg-[center_top_18rem] lg:overflow-hidden overflow-y-auto">
+  <main class="flex lg:h-full h-max w-[100vw] z-[20] relative lg:overflow-hidden overflow-y-auto bg-[#0ce7ff]">
+    <Sun client:load />
+    <Sky client:load />
+    <div class="bg-[url('/assets/bigHill.png')] bg-no-repeat bg-[center_top_18rem] h-full w-full absolute"></div>
     <img src="/assets/skyGradientPiece.png" alt="A piece of the skybox" class="absolute lg:top-20 top-8 opacity-40" />
-    <div class="grid min-w-full lg:grid-flow-col">
+    <PlayerScene client:load />
+    <div class="grid min-w-full lg:grid-flow-col z-[100]">
       <div class="2xl:w-[40rem] xl:w-[30rem] lg:w-[25rem] w-full relative z-50">
         <div id="bounds" class="w-full absolute top-36 h-[40vh] lg:h-[80vh] bottom-0 z-20 left-0 self-center"></div>
-        <PlayerScene client:load />
         <InfoModal />
       </div>
-      <div class="px-20 w-full flex z-[99] justify-center py-10">
+      <div class="px-20 w-full flex z-[100] justify-center py-10">
         <Projects />
       </div>
     </div>

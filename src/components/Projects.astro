@@ -91,6 +91,11 @@ import Down from "../icons/Down";
 				<img class={"w-full h-fit m-4 rounded-md " + project.verticalAspectRatio && project.verticalAspectRatio == true ? "w-[50%]" : ""} src={"/projects" + project.imageUrl} alt={project.project} />
 			  : <p class="italic p-2">No image available</p>}
 			  <p class="p-2 text-xl">Stack: {project.techStack}</p>
+			  {project.otherContributors ? <div>
+				<p class="p-2 text-xl">Other Contributors:</p>
+				{project.otherContributors.map((e:any)=>{
+				return <a class="p-2 text-xl" href={e.link}>{e.credit}</a>
+			  })}</div> : null}
 			</div>
 			<hr class="p-2 w-full"></hr>
 		);

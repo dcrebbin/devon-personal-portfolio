@@ -336,10 +336,11 @@ export const PROJECTS = [
     techStack: "Unity C#",
     imageUrl: "/games/maze-flow.png",
     role: "Software, Graphics",
+    // otherContributors: [{ credit: "Music by ", link: "" }],
     link: "https://play.google.com/store/apps/details?id=com.PrototypePurgatory.MazeFlow",
   },
   {
-    type:"title",
+    type: "title",
     text: "2018",
   },
   {

@@ -32,7 +32,7 @@ export default function Sun() {
   }
 
   return (
-    <motion.div className={"w-full  h-full fixed z-[80] pointer-events-auto transition-all"} animate={{ backdropFilter: isDayTime ? ["brightness(0.7)", "brightness(1)", "brightness(0.9)", "brightness(0.3)"] : ["brightness(0.3) grayscale(20)","brightness(0.02) grayscale(0.2)","brightness(0.05) grayscale(0.5)","brightness(0.7) grayscale(0.3)"] }} transition={animationTransition}>
+    <motion.div className={"w-full  h-full fixed z-[10] pointer-events-auto transition-all"} animate={{ backdropFilter: isDayTime ? ["brightness(0.7)", "brightness(1)", "brightness(0.9)", "brightness(0.3)"] : ["brightness(0.3) grayscale(20)","brightness(0.02) grayscale(0.2)","brightness(0.05) grayscale(0.5)","brightness(0.7) grayscale(0.3)"] }} transition={animationTransition}>
       <motion.img ref={animationRef} animate={{ translateX: [-100, 2000], translateY: [200, -100, 200]}} transition={animationTransition} src="/assets/sun.png" alt="The Sun" className={"w-auto object-cover absolute z-0 " +dayTimeEffects()} />
     </motion.div>
   );

@@ -1,3 +1,7 @@
+---
+import Sun from "../components/Sun";
+---
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -21,6 +25,8 @@
   </div> -->
   <div class="w-full h-6 flex text-center absolute justify-center p-2">Site in development</div>
   <body>
+    <Sun client:load />
+
     <slot />
   </body>
 
@@ -39,4 +45,6 @@
       height: 100vh;
     }
   </style>
+
+
 </html>

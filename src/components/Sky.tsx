@@ -1,10 +1,10 @@
 import { motion, type ValueAnimationTransition } from "framer-motion";
 import { useEffect, useState } from "react";
 
-export default function Sun() {
+export default function Sun(props: any) {
   const [isDayTime, setIsDayTime] = useState(true);
   const [timer, setTimer] = useState(0);
-  const dayDuration = 100;
+  const dayDuration = props.dayDuration;
   const animationTransition: ValueAnimationTransition = {
     duration: dayDuration,
     ease: "linear",
@@ -25,5 +25,5 @@ export default function Sun() {
     return () => clearInterval(interval);
   }, []);
 
-  return <motion.div className={"w-full h-full fixed z-[99] pointer-events-auto transition-all"} animate={{ backdropFilter: isDayTime ? ["brightness(0.7)", "brightness(1)", "brightness(0.9)", "brightness(0.3)"] : ["brightness(0.2) grayscale(0.3)", "brightness(0.06) grayscale(0.2)", "brightness(0.05) grayscale(0.5)", "brightness(0.7) grayscale(0.3)"] }} transition={animationTransition}></motion.div>;
+  return <motion.div className={"w-full h-full fixed z-[99] pointer-events-auto transition-all"} animate={{ backdropFilter: isDayTime ? ["brightness(0.7)", "brightness(1)", "brightness(0.9)", "brightness(0.3)"] : ["brightness(0.2) grayscale(0.3)", "brightness(0.25) grayscale(0.2)", "brightness(0.3) grayscale(0.5)", "brightness(0.7) grayscale(0.3)"] }} transition={animationTransition}></motion.div>;
 }

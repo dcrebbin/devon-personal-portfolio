@@ -1,11 +1,11 @@
 import { motion, type ValueAnimationTransition } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 
-export default function Sun() {
+export default function Sun(props: any) {
   const [isDayTime, setIsDayTime] = useState(true);
   const animationRef = useRef(null);
   const [timer, setTimer] = useState(0);
-  const dayDuration = 100;
+  const dayDuration = props.dayDuration;
   const animationTransition: ValueAnimationTransition = {
     duration: dayDuration,
     ease: "linear",
@@ -30,5 +30,5 @@ export default function Sun() {
     return isDayTime ? "brightness-100 saturation-100" : "brightness-[0.5] drop-shadow-md";
   }
 
-  return <motion.img ref={animationRef} animate={{ translateX: [-100, 2000], translateY: [200, -100, 200] }} transition={animationTransition} src="/assets/sun.png" alt="The Sun" className={"w-auto object-cover absolute " + dayTimeEffects()} />;
+  return <motion.img ref={animationRef} animate={{ translateX: [-100, 2000], translateY: [200, 100, 0, -100, 0, 100, 200] }} transition={animationTransition} src="/assets/sun.png" alt="The Sun" className={"w-auto object-cover absolute " + dayTimeEffects()} />;
 }

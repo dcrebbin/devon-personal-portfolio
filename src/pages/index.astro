@@ -5,12 +5,14 @@ import PlayerScene from "../components/PlayerScene";
 import InfoModal from "../components/InfoModal";
 import Sun from "../components/Sun";
 import Sky from "../components/Sky";
+
+const dayDuration = 100;
 ---
 
 <Layout>
-  <main class="flex lg:h-full h-max w-[100vw] z-[20] relative lg:overflow-hidden overflow-y-auto bg-[#0ce7ff]">
-    <Sun client:load />
-    <Sky client:load />
+  <main class="flex lg:h-full h-max w-[100vw] z-[20] relative lg:overflow-hidden overflow-x-hidden overflow-y-auto bg-[#0ce7ff]">
+    <Sun dayDuration={dayDuration} client:load />
+    <Sky dayDuration={dayDuration} client:load />
     <div class="bg-[url('/assets/bigHill.png')] bg-no-repeat bg-[center_top_18rem] h-full w-full absolute"></div>
     <img src="/assets/skyGradientPiece.png" alt="A piece of the skybox" class="absolute lg:top-20 top-8 opacity-40" />
     <PlayerScene client:load />

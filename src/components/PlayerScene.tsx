@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import { motion, type ValueAnimationTransition } from "framer-motion";
-import InfoModal from "./InfoModal";
 
 export default function PlayerScene() {
   const [isMoving, setIsMoving] = useState(false);
@@ -21,6 +20,8 @@ export default function PlayerScene() {
 
     let nextX = playerX;
     let nextY = playerY;
+
+    let initialWidth = window.innerWidth;
 
     const boundsElement = document.getElementById("bounds");
     if (!boundsElement) return;
@@ -60,7 +61,11 @@ export default function PlayerScene() {
     }
 
     window.addEventListener("resize", () => {
-      bounds = boundsElement.getBoundingClientRect();
+      let newWidth = window.innerWidth;
+      if (newWidth !== initialWidth) {
+        initialWidth = newWidth;
+        bounds = boundsElement.getBoundingClientRect();
+      }
     });
     document.addEventListener("mousedown", (e) => {
       console.log("move");

@@ -339,6 +339,7 @@ export const PROJECTS = [
     link: "https://play.google.com/store/apps/details?id=com.PrototypePurgatory.MazeFlow",
   },
   {
+    type:"title",
     text: "2018",
   },
   {

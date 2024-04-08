@@ -13,8 +13,11 @@ const dayDuration = 100;
   <main class="flex lg:h-full h-max w-[100vw] z-[20] relative overflow-x-hidden overflow-y-auto bg-[#0ce7ff]">
     <Sun dayDuration={dayDuration} client:load />
     <Sky dayDuration={dayDuration} client:load />
-    <div class="bg-[url('/assets/bigHill.png')] bg-no-repeat bg-[center_top_18rem] h-full w-full absolute"></div>
-    <img src="/assets/skyGradientPiece.png" alt="A piece of the skybox" class="absolute lg:top-20 top-8 opacity-40" />
+    <div class="bg-[url('/assets/bigHill.png')] z-[5] bg-no-repeat h-full w-full absolute"></div>
+    <div class="bg-[url('/assets/smallHill-1.png')] bg-no-repeat bg-[left_-10rem_top_13rem] h-full w-full absolute z-[4]"></div>
+    <div class="bg-[url('/assets/smallHill-2.png')] bg-no-repeat bg-[center_top_13rem] h-full w-full absolute z-[4]"></div>
+    <div class="bg-[url('/assets/smallHill-3.png')] bg-no-repeat bg-[right_-10rem_top_9rem] h-full w-full absolute z-[4]"></div>
+    <img src="/assets/skyGradientPiece.png" alt="A piece of the skybox" class="absolute lg:top-10 top-8 opacity-40 z-0" />
     <PlayerScene client:load />
     <div class="grid min-w-full lg:grid-flow-col z-[100]">
       <div class="2xl:w-[40rem] xl:w-[30rem] lg:w-[25rem] w-full relative z-50">

@@ -3,7 +3,7 @@ import { motion, type ValueAnimationTransition } from "framer-motion";
 
 export default function PlayerScene() {
   const [isMoving, setIsMoving] = useState(false);
-
+  const [isInfoOpen, setIsInfoOpen] = useState(false);
   useEffect(() => {
     //clean this up
     const player = document.getElementById("player");
@@ -69,7 +69,7 @@ export default function PlayerScene() {
     }
 
     function infoButton() {
-      alert("Hello");
+      setIsInfoOpen((prev) => !prev);
     }
 
     window.addEventListener("resize", () => {
@@ -89,7 +89,6 @@ export default function PlayerScene() {
       }
       nextX = e.clientX - playerWidth / 2;
       nextY = e.clientY - playerHeight / 2;
-      console.log(player.style.left, player.style.top);
     });
     setInterval(movePlayer, 1000 / 60);
   }, []);
@@ -104,6 +103,12 @@ export default function PlayerScene() {
   return (
     <div className="z-[10]">
       <div id="player" className="absolute left-64 top-48">
+        <div className="-translate-x-10 -translate-y-10" hidden={!isInfoOpen}>
+          <div className="w-72 h-32 bg-white text-black absolute z-20 p-3 -translate-x-[14em] -translate-y-[8em] rounded-3xl">
+            <p>My name's Devon, I've been a software developer for the Australian Government with 5+ years - specializing in web development!</p>
+          </div>
+          <div className="absolute border-white -translate-x-10 z-20 rounded-b-lg  border-b-transparent border-b-[40px] border-r-[60px]"></div>
+        </div>
         <div className="h-[10rem] w-[5rem] relative" id="playerSprite">
           <motion.img src="/assets/player/head.png" animate={isMoving ? { translateY: [0, -8] } : { translateY: [] }} transition={animationTransition} className="absolute left-[-3px]" alt="Devon Crebbin" />
           <motion.img src="/assets/player/body.png" animate={isMoving ? { translateY: [0, -10] } : { translateY: [] }} transition={animationTransition} className="absolute top-[2.5rem] z-40" alt="Devon Crebbin" />

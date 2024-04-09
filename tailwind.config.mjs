@@ -6,7 +6,7 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        sans: ["Socake", ...defaultTheme.fontFamily.sans],
+        sans: ["Socake", "Roboto", ...defaultTheme.fontFamily.sans],
       },
     },
   },

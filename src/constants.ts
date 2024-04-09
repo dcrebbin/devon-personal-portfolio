@@ -354,7 +354,7 @@ export const PROJECTS = [
     elevatorPitch: "3D low poly jet racing game",
     status: "Abandoned",
     techStack: "Unity C#",
-    imageUrl: "/games/skyveil.gif",
+    imageUrl: "/games/skyveil.png",
     link: null,
   },
   {

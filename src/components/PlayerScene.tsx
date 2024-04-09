@@ -27,19 +27,20 @@ export default function PlayerScene() {
     if (!boundsElement) return;
     let bounds = boundsElement.getBoundingClientRect();
 
+    function flipPlayer() {
+      playerSprite!.style.transform = `scaleX(${nextX < playerX ? 1 : -1})`;
+    }
+
+    function updatePlayerPosition() {
+      player!.style.left = `${playerX}px`;
+      player!.style.top = `${playerY}px`;
+    }
+
     function movePlayer() {
-      if (!playerImg) return;
-      if (nextX === playerX && nextY === playerY) {
-        setIsMoving(false);
-      }
-      if (nextX !== playerX || nextY !== playerY) {
-        setIsMoving(true);
-      }
-      if (nextX < playerX && nextX != playerX) {
-        playerSprite!.style.transform = "scaleX(1)";
-      } else if (nextX != playerX) {
-        playerSprite!.style.transform = "scaleX(-1)";
-      }
+      const isMoving = nextX === playerX && nextY === playerY;
+      setIsMoving(!isMoving);
+      if (isMoving) return;
+      flipPlayer();
 
       if (nextX < bounds.left) nextX = bounds.left;
       if (nextX + playerWidth > bounds.right) nextX = bounds.right - playerWidth;
@@ -56,19 +57,36 @@ export default function PlayerScene() {
         playerX += (dx / distance) * playerSpeed;
         playerY += (dy / distance) * playerSpeed;
       }
-      player!.style.left = `${playerX}px`;
-      player!.style.top = `${playerY}px`;
+      updatePlayerPosition();
     }
 
-    window.addEventListener("resize", () => {
+    function updateBounds() {
       let newWidth = window.innerWidth;
       if (newWidth !== initialWidth) {
         initialWidth = newWidth;
-        bounds = boundsElement.getBoundingClientRect();
+        bounds = boundsElement!.getBoundingClientRect();
       }
+    }
+
+    function infoButton() {
+      alert("Hello");
+    }
+
+    window.addEventListener("resize", () => {
+      updateBounds();
     });
     document.addEventListener("mousedown", (e) => {
-      console.log("move");
+      const target = e.target as HTMLElement;
+
+      if (target.closest("BUTTON") || target.closest("a")) {
+        const button = target.closest("BUTTON");
+
+        if (button?.id == "info") {
+          infoButton();
+        }
+
+        return;
+      }
       nextX = e.clientX - playerWidth / 2;
       nextY = e.clientY - playerHeight / 2;
       console.log(player.style.left, player.style.top);

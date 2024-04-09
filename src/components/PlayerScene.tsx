@@ -5,8 +5,9 @@ export default function PlayerScene() {
   const [isMoving, setIsMoving] = useState(false);
   const [isInfoOpen, setIsInfoOpen] = useState(false);
   const audioRef = useRef(null);
-  let isTyping = false;
   const typingSpeech = 43;
+
+  const faceRef = useRef(null);
 
   useEffect(() => {
     //clean this up
@@ -72,6 +73,7 @@ export default function PlayerScene() {
       }
     }
     let talkingInterval: number | undefined;
+    let speakingInterval: number | undefined;
 
     function playAudio() {
       if (audioRef.current) {
@@ -90,15 +92,18 @@ export default function PlayerScene() {
     function clearTyping() {
       const speechContent = document.getElementById("speechContent");
       if (speechContent) speechContent.textContent = "";
+      clearInterval(talkingInterval);
     }
 
     function showModal() {
       playAudio();
-      fakeTyping();
+      startFakeTyping();
+      startFakeSpeaking();
     }
     function hideModal() {
-      clearInterval(talkingInterval);
       clearTyping();
+      stopFakeTyping();
+      stopFakeSpeaking();
       stopAudio();
     }
 
@@ -109,9 +114,30 @@ export default function PlayerScene() {
         return !prev;
       });
     }
-    const text = "Hey how's it going. My name's Devon and I've been a software developer for the Australian Government for over 5 years - focusing on web development & innovation!";
 
-    function fakeTyping() {
+    function stopFakeSpeaking() {
+      clearInterval(speakingInterval);
+    }
+
+    const text = "Hey how's it going. My name's Devon and I've been a software developer for the Australian Government for over 5 years - focusing on web development & innovation!";
+    function startFakeSpeaking() {
+      const face = faceRef.current as unknown as HTMLImageElement;
+      let i = 0;
+      speakingInterval = setInterval(() => {
+        if (i % 2 == 0) {
+          face.src = "/assets/player/head-speaking.png";
+        } else {
+          face.src = "/assets/player/head.png";
+        }
+        i++;
+      }, 200);
+    }
+
+    function stopFakeTyping() {
+      clearInterval(talkingInterval);
+    }
+
+    function startFakeTyping() {
       let i = 0;
       const speechContent = document.getElementById("speechContent");
       if (!speechContent) return;
@@ -120,7 +146,8 @@ export default function PlayerScene() {
           speechContent.textContent += text.charAt(i);
           i++;
         } else {
-          clearInterval(talkingInterval);
+          stopFakeTyping();
+          stopFakeSpeaking();
         }
       }, typingSpeech);
     }
@@ -166,7 +193,7 @@ export default function PlayerScene() {
           <div className="absolute border-white -translate-x-10 z-20 rounded-b-lg  border-b-transparent border-b-[40px] border-r-[60px]"></div>
         </div>
         <div className="h-[10rem] w-[5rem] relative" id="playerSprite">
-          <motion.img src="/assets/player/head.png" animate={isMoving ? { translateY: [0, -8] } : { translateY: [] }} transition={animationTransition} className="absolute left-[-3px]" alt="Devon Crebbin" />
+          <motion.img ref={faceRef} src="/assets/player/head.png" animate={isMoving ? { translateY: [0, -8] } : { translateY: [] }} transition={animationTransition} className="absolute left-[-3px]" alt="Devon Crebbin" />
           <motion.img src="/assets/player/body.png" animate={isMoving ? { translateY: [0, -10] } : { translateY: [] }} transition={animationTransition} className="absolute top-[2.5rem] z-40" alt="Devon Crebbin" />
           <motion.img src="/assets/player/leftArm.png" style={{ transformOrigin: "top right" }} animate={isMoving ? { rotateZ: [20, -45, -90, -120] } : { rotateZ: [] }} transition={animationTransition} className="absolute top-[2.8rem] right-16 z-20" alt="Devon Crebbin" />
           <motion.img src="/assets/player/rightArm.png" style={{ transformOrigin: "top left" }} animate={isMoving ? { rotateZ: [-20, 45, 90, 120] } : { rotateZ: [] }} transition={animationTransition} className="absolute top-[2.6rem] left-[1.8rem] z-50" alt="Devon Crebbin" />

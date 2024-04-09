@@ -23,7 +23,7 @@ export default function InfoModal() {
         </div>
       </div>
       <p>I'm Devon Crebbin</p>
-      <p className="text-sm">Software Developer, Graphic Designer & Founder </p>
+      <p className="text-sm">Indigenous Software Developer & Designer</p>
     </div>
   );
 }

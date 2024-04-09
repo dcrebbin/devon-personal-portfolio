@@ -1,11 +1,13 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { motion, type ValueAnimationTransition } from "framer-motion";
 
 export default function PlayerScene() {
   const [isMoving, setIsMoving] = useState(false);
   const [isInfoOpen, setIsInfoOpen] = useState(false);
-
+  const audioRef = useRef(null);
   let isTyping = false;
+  const typingSpeech = 43;
+
   useEffect(() => {
     //clean this up
     const player = document.getElementById("player");
@@ -70,21 +72,45 @@ export default function PlayerScene() {
       }
     }
     let talkingInterval: number | undefined;
-    function infoButton() {
-      setIsInfoOpen((prev) => !prev);
-      if (isTyping) {
-        clearInterval(talkingInterval);
-        isTyping = false;
-        const speechContent = document.getElementById("speechContent");
-        if (speechContent) speechContent.textContent = "";
-      } else {
-        fakeTyping();
-        isTyping = true;
+
+    function playAudio() {
+      if (audioRef.current) {
+        const audio = audioRef.current as HTMLAudioElement;
+        audio.play();
+        audio.currentTime = 0;
       }
     }
-    const text = "My name's Devon, I've been a software developer for the Australian Government with 5+ years - specializing in web development!";
 
-    //fake typing that can be reset and stopped
+    function stopAudio() {
+      const audio = audioRef.current as unknown as HTMLAudioElement;
+      audio.currentTime = 0;
+      audio.pause();
+    }
+
+    function clearTyping() {
+      const speechContent = document.getElementById("speechContent");
+      if (speechContent) speechContent.textContent = "";
+    }
+
+    function showModal() {
+      playAudio();
+      fakeTyping();
+    }
+    function hideModal() {
+      clearInterval(talkingInterval);
+      clearTyping();
+      stopAudio();
+    }
+
+    function infoButton() {
+      setIsInfoOpen((prev) => {
+        if (!prev) showModal();
+        else hideModal();
+        return !prev;
+      });
+    }
+    const text = "Hey how's it going. My name's Devon and I've been a software developer for the Australian Government for over 5 years - focusing on web development & innovation!";
+
     function fakeTyping() {
       let i = 0;
       const speechContent = document.getElementById("speechContent");
@@ -96,7 +122,7 @@ export default function PlayerScene() {
         } else {
           clearInterval(talkingInterval);
         }
-      }, 50);
+      }, typingSpeech);
     }
 
     window.addEventListener("resize", () => {
@@ -133,6 +159,9 @@ export default function PlayerScene() {
         <div className="-translate-x-10 -translate-y-10" hidden={!isInfoOpen}>
           <div className="w-72 h-32 bg-white text-black absolute z-20 p-3 -translate-x-[14em] -translate-y-[8em] rounded-3xl">
             <p id="speechContent"></p>
+            <audio src="/assets/audio/intro.mp3" ref={audioRef}>
+              <track kind="captions" />
+            </audio>
           </div>
           <div className="absolute border-white -translate-x-10 z-20 rounded-b-lg  border-b-transparent border-b-[40px] border-r-[60px]"></div>
         </div>

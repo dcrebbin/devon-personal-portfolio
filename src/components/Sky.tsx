@@ -18,10 +18,10 @@ export default function Sun(props: any) {
     const interval = setInterval(() => {
       setTimer((prev) => {
         if (prev >= dayDuration - 1) {
-          setIsDayTime((prevIsDayTime) => !prevIsDayTime); // Use functional form of setIsDayTime
-          return 0; // Reset timer to 0 when it reaches 2
+          setIsDayTime((prevIsDayTime) => !prevIsDayTime);
+          return 0;
         } else {
-          return prev + 1; // Increment timer
+          return prev + 1;
         }
       });
     }, 1000);

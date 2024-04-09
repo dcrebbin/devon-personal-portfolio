@@ -1,0 +1,36 @@
+---
+import Github from "../icons/Github";
+import Website from "../icons/Website";
+
+const { project } = Astro.props;
+---
+
+{
+  project.type == "title" ? (
+    <h2 class="w-full text-center text-2xl underline mb-8" id={`${project.text}`}>
+      {project.text}
+    </h2>
+  ) : (
+    <div class="flex flex-col w-fit items-center justify-center h-min">
+      <div class="flex items-center gap-2" id={project.project}>
+        <h3 class="text-2xl">{project.project}</h3>
+        {project.link == null ? (
+          <p>{project.status}</p>
+        ) : (
+          <a class="hover:-translate-y-[2px] hover:cursor-pointer" href={project.link} target="_blank">
+            <Website />
+          </a>
+        )}
+        {project.openSourceLink == null ? null : (
+          <a class="hover:-translate-y-[2px] hover:cursor-pointer" href={project.openSourceLink} target="_blank">
+            <Github />
+          </a>
+        )}
+      </div>
+      <h3 class="text-xl">{project.elevatorPitch}</h3>
+      {project.imageUrl !== null ? <img loading="lazy" class={"w-full h-fit m-4 rounded-md " + project.verticalAspectRatio && project.verticalAspectRatio == true ? "w-[50%]" : ""} src={"/projects" + project.imageUrl} alt={project.project} /> : <p class="italic p-2">No image available</p>}
+      <p class="p-2 text-xl">Stack: {project.techStack}</p>
+    </div>
+  )
+}
+<hr class="p-2 w-full" />

@@ -10,7 +10,6 @@ export const PROJECTS = [
     status: "Released",
     techStack: "Chromium Extension API/Vite/Ts/React",
     imageUrl: "/misc/chat-gpt-enhanced.png",
-    role: "Software & Graphics",
     openSourceLink: "https://github.com/dcrebbin/chatgpt-enhanced-extension",
     link: "https://chromewebstore.google.com/detail/chatgpt-enhanced/bpfpceoliebopalajhhgdpkepnkadlod",
   },
@@ -20,7 +19,6 @@ export const PROJECTS = [
     elevatorPitch: "AI HR Coach for Googlers",
     techStack: "Angular/Go Fiber",
     imageUrl: "/web-apps/gemini-coach.jpg",
-    role: "Software & Graphics",
     openSourceLink: "https://github.com/dcrebbin/gemini-coach",
     link: "https://gemini-coach.vercel.app/",
   },
@@ -38,7 +36,6 @@ export const PROJECTS = [
     project: "AI Audiobooks",
     elevatorPitch: "Convert your favourite books or text into audiobooks with python",
     imageUrl: "/misc/ai-audiobooks.png",
-    role: "Software",
     techStack: "Python",
     link: null,
     openSourceLink: "https://github.com/dcrebbin/ai-audiobooks",
@@ -63,7 +60,6 @@ export const PROJECTS = [
     status: "Unreleased",
     techStack: "T3-Stack (Nextjs, Prisma, Tailwind, TRPC)",
     imageUrl: "/web-apps/aior.png",
-    role: "Software & Graphics",
     link: null,
     verticalAspectRatio: true,
   },
@@ -74,7 +70,6 @@ export const PROJECTS = [
     status: "Abandoned",
     techStack: "Unity C#, Python, Computer Vision",
     imageUrl: "/misc/clouds.png",
-    role: "Software",
     link: null,
   },
   {
@@ -83,7 +78,6 @@ export const PROJECTS = [
     elevatorPitch: "A hacky meta glasses api to connect to GPT4 Vision to log food",
     techStack: "Bun, Typescript",
     imageUrl: "/misc/glasses-food-log.png",
-    role: "Software & Graphics",
     openSourceLink: "https://github.com/dcrebbin/meta-vision-api",
     link: "https://www.youtube.com/watch?v=PiEDrcLCmew",
   },
@@ -93,7 +87,6 @@ export const PROJECTS = [
     elevatorPitch: "Digital Australian Indigenous Map",
     techStack: "Nextjs, Prisma, Tailwind",
     imageUrl: "/web-apps/ourland.png",
-    role: "Software & Graphics",
     link: "https://land.org.au",
   },
   {
@@ -103,7 +96,6 @@ export const PROJECTS = [
     status: "Unreleased",
     techStack: "Swift",
     imageUrl: "/misc/chat-watch.png",
-    role: "Software",
     link: null,
     verticalAspectRatio: true,
   },
@@ -114,7 +106,6 @@ export const PROJECTS = [
     status: "Unreleased",
     techStack: "Swift, Go Fiber",
     imageUrl: "/misc/econ.png",
-    role: "Software",
     link: null,
     verticalAspectRatio: true,
   },
@@ -125,7 +116,6 @@ export const PROJECTS = [
     status: "Unreleased",
     techStack: "Swift, Go Fiber",
     imageUrl: "/misc/hanzi-quiz.png",
-    role: "Software",
     link: null,
     verticalAspectRatio: true,
   },
@@ -136,7 +126,6 @@ export const PROJECTS = [
     status: "Unreleased",
     techStack: "Bun, Typescript",
     imageUrl: "/misc/hanzi-get.png",
-    role: "Software",
     link: null,
   },
   {
@@ -145,18 +134,16 @@ export const PROJECTS = [
     elevatorPitch: "Flutter package to convert Chinese characters to Jyutping",
     techStack: "Dart",
     imageUrl: "/misc/jyutping-for-flutter.png",
-    role: "Software",
     link: "https://pub.dev/packages/jyutping",
   },
   {
     type: "project",
     project: "Hanzi Quest",
-    elevatorPitch: "Mobile game to learn Chinese characters",
-    status: "Unreleased",
+    elevatorPitch: "Web & Mobile game to learn Chinese characters",
+    status: "Released",
     techStack: "Unity C#",
     imageUrl: "/games/hanzi-quest.png",
-    role: "Software & Graphics",
-    link: null,
+    link: "https://withlangpal.itch.io/hanzi-quest",
   },
   {
     type: "project",
@@ -164,8 +151,8 @@ export const PROJECTS = [
     elevatorPitch: "An AI powered interview trainer for the Australian Public Service",
     techStack: "Qwik, Go Fiber",
     imageUrl: "/web-apps/up-it.png",
-    role: "Software & Graphics",
-    link: "https://upitaps.com.au/",
+    openSourceLink: "https://github.com/dcrebbin/up-it-aps-frontend",
+    link: null,
   },
   {
     type: "project",
@@ -174,7 +161,6 @@ export const PROJECTS = [
     status: "Unreleased",
     techStack: "Javascript",
     imageUrl: "/misc/crunchy-roll-scraper.png",
-    role: "Software",
     link: null,
   },
   {
@@ -183,7 +169,6 @@ export const PROJECTS = [
     elevatorPitch: "Research project to preserve Australian Indigenous languages using AI",
     techStack: "Nextjs, Prisma, Tailwind, TRPC",
     imageUrl: "/web-apps/indigilang.png",
-    role: "Software & Graphics",
     link: "https://indigilang.com.au",
   },
   {
@@ -192,7 +177,6 @@ export const PROJECTS = [
     elevatorPitch: "An app for learning character based languages (like Mandarin, Cantonese, Korean etc).",
     techStack: "Flutter",
     imageUrl: "/mobile-apps/langpal.png",
-    role: "Software & Graphics",
     link: "https://withlangpal.com",
   },
   {
@@ -202,7 +186,6 @@ export const PROJECTS = [
     status: "Abandoned",
     techStack: "Nextjs, Tailwind",
     imageUrl: "/web-apps/artvuu-group.png",
-    role: "Software, Graphics",
     link: null,
   },
   {
@@ -216,7 +199,6 @@ export const PROJECTS = [
     status: "Unreleased",
     techStack: "Nextjs",
     imageUrl: "/web-apps/gram4r.png",
-    role: "Software, Graphics",
     link: null,
   },
   {
@@ -225,7 +207,6 @@ export const PROJECTS = [
     elevatorPitch: "Relaxed infinite runner [prototype]",
     techStack: "Unity C#",
     imageUrl: "/games/kitsune.jpg",
-    role: "Software & Graphics",
     link: "https://play.google.com/store/apps/details?id=com.PrototypePurgatory.kitsun3",
   },
   {
@@ -234,7 +215,6 @@ export const PROJECTS = [
     elevatorPitch: "3D Wordle clone [prototype]",
     techStack: "Unity C#",
     imageUrl: "/games/word-bloqs.png",
-    role: "Software, Graphics",
     link: "https://play.google.com/store/apps/details?id=com.PrototypePurgatory",
   },
   {
@@ -243,7 +223,6 @@ export const PROJECTS = [
     elevatorPitch: "Mobile and Desktop GBA styled game mixed between Dark Souls and Shadow of the Colossus",
     techStack: "Unity C#",
     imageUrl: "/games/yvettes-prologue.jpg",
-    role: "Software, Graphics & Music",
     link: "https://play.google.com/store/apps/details?id=com.PrototypePurgatory.YvettesPrologue",
   },
   {
@@ -253,7 +232,6 @@ export const PROJECTS = [
     status: "Unreleased",
     techStack: "Unity C#",
     imageUrl: "/games/quackers-party.png",
-    role: "Software, Graphics",
     link: null,
   },
   {
@@ -263,7 +241,7 @@ export const PROJECTS = [
     status: "Abandoned",
     techStack: "Nextjs, Nestjs",
     imageUrl: "/web-apps/dashfl0w.png",
-    role: "Software, Graphics",
+
     link: null,
   },
   {
@@ -273,7 +251,6 @@ export const PROJECTS = [
     status: "Unreleased",
     techStack: "Nestjs",
     imageUrl: "/misc/youtube-rating-api.png",
-    role: "Software",
     link: null,
   },
   {
@@ -287,7 +264,6 @@ export const PROJECTS = [
     status: "Unreleased",
     techStack: "Flutter",
     imageUrl: "/mobile-apps/dwitter.png",
-    role: "Software, Graphics",
     link: null,
     verticalAspectRatio: true,
   },
@@ -302,7 +278,6 @@ export const PROJECTS = [
     status: "Abandoned",
     techStack: "Flutter",
     imageUrl: "/mobile-apps/metro-it.png",
-    role: "Software, Graphics",
     link: null,
   },
   {
@@ -311,7 +286,6 @@ export const PROJECTS = [
     elevatorPitch: "An app to convert your Spotify playlists into Youtube playlists",
     techStack: "Flutter",
     imageUrl: "/mobile-apps/sition.png",
-    role: "Software & Graphics",
     link: "https://github.com/dcrebbin/spotify-to-youtube-music",
     verticalAspectRatio: true,
   },
@@ -325,7 +299,6 @@ export const PROJECTS = [
     elevatorPitch: "Hyper Casual 2D infinite runner",
     techStack: "Unity C#",
     imageUrl: "/games/poly-mountain.png",
-    role: "Software, Graphics",
     link: "https://play.google.com/store/apps/details?id=com.PrototypePurgatory.PolyMountain",
     verticalAspectRatio: true,
   },
@@ -335,8 +308,6 @@ export const PROJECTS = [
     elevatorPitch: "Maze based infinite runner",
     techStack: "Unity C#",
     imageUrl: "/games/maze-flow.png",
-    role: "Software, Graphics",
-    // otherContributors: [{ credit: "Music by ", link: "" }],
     link: "https://play.google.com/store/apps/details?id=com.PrototypePurgatory.MazeFlow",
   },
   {
@@ -350,7 +321,6 @@ export const PROJECTS = [
     status: "Abandoned",
     techStack: "Unity C#",
     imageUrl: "/games/waywind.jpg",
-    role: "Software, Graphics",
     link: null,
   },
   {
@@ -364,7 +334,6 @@ export const PROJECTS = [
     status: "Abandoned",
     techStack: "Unity C#",
     imageUrl: "/mobile-apps/artvuu.png",
-    role: "Software, Graphics",
     link: null,
   },
   {
@@ -373,7 +342,6 @@ export const PROJECTS = [
     elevatorPitch: "Wave based pixel art top down RPG",
     techStack: "Unity C#",
     imageUrl: "/games/kytls-quest.jpg",
-    role: "Software, Graphics",
     link: "https://play.google.com/store/apps/details?id=com.PrototypePurgatory.KytlsQuest",
   },
   {
@@ -387,7 +355,6 @@ export const PROJECTS = [
     status: "Abandoned",
     techStack: "Unity C#",
     imageUrl: "/games/skyveil.gif",
-    role: "Software & Graphics",
     link: null,
   },
   {
@@ -396,7 +363,6 @@ export const PROJECTS = [
     elevatorPitch: "Guitar hero-like pixel art cowboy duels",
     techStack: "Unity C#",
     imageUrl: "/games/cowboytaptap.png",
-    role: "Software, Graphics",
     link: "https://play.google.com/store/apps/details?id=com.PrototypePurgatory.CowboyTapTap",
   },
   {
@@ -405,7 +371,6 @@ export const PROJECTS = [
     elevatorPitch: "4-bit dungeon crawler",
     techStack: "Unity C#",
     imageUrl: "/games/ashers-descent.jpg",
-    role: "Software, Graphics",
     link: "https://play.google.com/store/apps/details?id=com.PrototypePurgatory.AshersDescent",
   },
   {
@@ -415,7 +380,6 @@ export const PROJECTS = [
     status: "Abandoned",
     techStack: "Unity C#",
     imageUrl: "/games/chicken-chickens.png",
-    role: "Software, Graphics",
     link: null,
   },
   {
@@ -424,7 +388,6 @@ export const PROJECTS = [
     elevatorPitch: "Box based infinite runner",
     techStack: "Unity C#",
     imageUrl: "/games/agcb.png",
-    role: "Software, Graphics",
     link: "https://play.google.com/store/apps/details?id=com.PrototypePurgatory.AGCB",
   },
   {
@@ -433,7 +396,7 @@ export const PROJECTS = [
     elevatorPitch: "Fitness app based on the viral Bring Sally Up challenge",
     techStack: "Android, Java",
     imageUrl: "/mobile-apps/downup.png",
-    role: "Software, Graphics",
+
     link: "https://play.google.com/store/apps/details?id=com.downupchallenge.downup",
     verticalAspectRatio: true,
   },
@@ -448,7 +411,6 @@ export const PROJECTS = [
     status: "Closed",
     techStack: "Windows Phone",
     imageUrl: null,
-    role: "Software, Graphics",
     link: null,
   },
 ];

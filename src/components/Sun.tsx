@@ -30,5 +30,5 @@ export default function Sun(props: any) {
     return isDayTime ? "brightness-100 saturation-100" : "brightness-[0.5] drop-shadow-md";
   }
 
-  return <motion.img ref={animationRef} animate={{ translateX: [-100, 2000], translateY: [200, 100, 0, -100, 0, 100, 200] }} transition={animationTransition} src="/assets/sun.png" alt="The Sun" className={"w-auto object-cover absolute " + dayTimeEffects()} />;
+  return <motion.img ref={animationRef} style={{ translateX: "-100px", translateY: "200px",zIndex:0 }} animate={{ translateX: [-100, 2000], translateY: [200, 100, 0, -100, 0, 100, 200] }} transition={animationTransition} src="/assets/sun.png" alt="The Sun" className={"w-auto object-cover absolute " + dayTimeEffects()} />;
 }

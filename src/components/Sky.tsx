@@ -28,5 +28,5 @@ export default function Sun(props: any) {
     return () => clearInterval(interval);
   }, []);
 
-  return <motion.div className={"w-full h-full fixed z-[99] pointer-events-auto transition-all"} animate={{ WebkitBackdropFilter: isDayTime ? dayTimeAnimation : nightTimeAnimation, backdropFilter: isDayTime ? dayTimeAnimation : nightTimeAnimation }} transition={animationTransition}></motion.div>;
+  return <motion.div className={"w-full h-full fixed z-[99] pointer-events-auto transition-all"} style={{ backdropFilter: "brightness(0.7)" }} animate={{ WebkitBackdropFilter: isDayTime ? dayTimeAnimation : nightTimeAnimation, backdropFilter: isDayTime ? dayTimeAnimation : nightTimeAnimation }} transition={animationTransition}></motion.div>;
 }

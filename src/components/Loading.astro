@@ -1,0 +1,15 @@
+<astro-loading>
+  <div class="bg-black w-full h-full fixed z-[999] flex items-center justify-center text-white"><p class="animate-ping">loading...</p></div>
+</astro-loading>
+
+<script>
+  class AstroLoading extends HTMLElement {
+    constructor() {
+      super();
+      window.addEventListener("load", () => {
+        this.remove();
+      });
+    }
+  }
+  customElements.define("astro-loading", AstroLoading);
+</script>

@@ -1,5 +1,6 @@
 ---
 import Sky from "../components/Sky";
+import Github from "../icons/Github";
 ---
 
 <!doctype html>
@@ -19,11 +20,14 @@ import Sky from "../components/Sky";
       }
     </style>
   </head>
-  <!-- <div class="text-xs text-center fixed backdrop-blur-sm p-3 flex flex-col font-bold gap-1 w-full text-white">
+  <!-- <div class="text-xs absolute text-center fixed backdrop-blur-sm p-3 flex flex-col font-bold gap-1 w-full text-white">
     <p>I acknowledge the Traditional Owners of the land on which I live and work. I pay my respects to Elders past, present.</p>
     <p>Sovereignty never ceded 🖤💛❤️</p>
   </div> -->
-  <div class="w-full h-6 flex text-center absolute justify-center p-2 z-[100] text-white">Site in development</div>
+  <div class="absolute w-full flex flex-col">
+    <div class="w-full h-6 flex text-center justify-center mb-1 z-[100] text-black pb-2">Site in development</div>
+    <div class="w-full h-6 flex items-center justify-center p-2 z-[100] text-black"><p>Use this site!</p><a class="hover:-translate-y-[3px] -translate-y-[2px] hover:cursor-pointer" href={"https://github.com/dcrebbin/modern-gamified-portfolio"} target="_blank"><Github /></a></div>
+  </div>
   <body>
     <slot />
   </body>

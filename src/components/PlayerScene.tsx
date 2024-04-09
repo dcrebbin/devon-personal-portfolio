@@ -4,6 +4,8 @@ import { motion, type ValueAnimationTransition } from "framer-motion";
 export default function PlayerScene() {
   const [isMoving, setIsMoving] = useState(false);
   const [isInfoOpen, setIsInfoOpen] = useState(false);
+
+  let isTyping = false;
   useEffect(() => {
     //clean this up
     const player = document.getElementById("player");
@@ -67,9 +69,34 @@ export default function PlayerScene() {
         bounds = boundsElement!.getBoundingClientRect();
       }
     }
-
+    let talkingInterval: number | undefined;
     function infoButton() {
       setIsInfoOpen((prev) => !prev);
+      if (isTyping) {
+        clearInterval(talkingInterval);
+        isTyping = false;
+        const speechContent = document.getElementById("speechContent");
+        if (speechContent) speechContent.textContent = "";
+      } else {
+        fakeTyping();
+        isTyping = true;
+      }
+    }
+    const text = "My name's Devon, I've been a software developer for the Australian Government with 5+ years - specializing in web development!";
+
+    //fake typing that can be reset and stopped
+    function fakeTyping() {
+      let i = 0;
+      const speechContent = document.getElementById("speechContent");
+      if (!speechContent) return;
+      talkingInterval = setInterval(() => {
+        if (i < text.length) {
+          speechContent.textContent += text.charAt(i);
+          i++;
+        } else {
+          clearInterval(talkingInterval);
+        }
+      }, 50);
     }
 
     window.addEventListener("resize", () => {
@@ -102,10 +129,10 @@ export default function PlayerScene() {
 
   return (
     <div className="z-[10]">
-      <div id="player" className="absolute left-64 top-48">
+      <div id="player" className="absolute left-96 top-96">
         <div className="-translate-x-10 -translate-y-10" hidden={!isInfoOpen}>
           <div className="w-72 h-32 bg-white text-black absolute z-20 p-3 -translate-x-[14em] -translate-y-[8em] rounded-3xl">
-            <p>My name's Devon, I've been a software developer for the Australian Government with 5+ years - specializing in web development!</p>
+            <p id="speechContent"></p>
           </div>
           <div className="absolute border-white -translate-x-10 z-20 rounded-b-lg  border-b-transparent border-b-[40px] border-r-[60px]"></div>
         </div>

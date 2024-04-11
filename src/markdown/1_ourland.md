@@ -1,11 +1,11 @@
 ---
 title: Ourland (land.org.au)
-website: https://land.org.au;
-timelineLine: Ourland;
-openSource: null;
+website: https://land.org.au
+timelineLink: Ourland
+openSource: null
 layout: ../layouts/MarkdownHighlightsLayout.astro
 subtitle: Indigenous Digital Map & Non Profit
-
+coverType: image
 ---
 ![](./public/projects/web-apps/ourland.png/)
 

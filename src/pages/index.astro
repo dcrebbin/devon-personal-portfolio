@@ -11,21 +11,21 @@ const dayDuration = 100;
 ---
 
 <Layout>
-  <main class="flex lg:h-full h-max w-[100vw] z-[20] relative overflow-hidden bg-[#0ce7ff]">
+  <main class="flex lg:h-full h-max w-[100vw] z-[20] relative bg-[#0ce7ff] overflow-hidden">
     <Sun dayDuration={dayDuration} client:load />
     <Sky dayDuration={dayDuration} client:load />
-    <div class="bg-[url('/assets/bigHill.png')] bg-cover z-[5] bg-no-repeat h-full w-full fixed"></div>
-    <div class="bg-[url('/assets/smallHill-1.png')] bg-no-repeat bg-[left_-10rem_top_13rem] h-full w-full fixed z-[4]"></div>
-    <div class="bg-[url('/assets/smallHill-2.png')] bg-no-repeat bg-[center_top_13rem] h-full w-full fixed z-[4]"></div>
-    <div class="bg-[url('/assets/smallHill-3.png')] bg-no-repeat bg-[right_-10rem_top_9rem] h-full w-full fixed z-[4]"></div>
-    <img src="/assets/skyGradientPiece.png" alt="A piece of the skybox" class="fixed lg:top-10 top-8 opacity-40 z-0" />
+    <div class="bg-[url('/assets/bigHill.png')] bg-cover z-[5] bg-no-repeat h-full w-full absolute bottom-0"></div>
+    <div class="bg-[url('/assets/smallHill-1.png')] bg-no-repeat bg-[left_-10rem_top_13rem] h-full w-full absolute z-[4]"></div>
+    <div class="bg-[url('/assets/smallHill-2.png')] bg-no-repeat bg-[center_top_13rem] h-full w-full absolute z-[4]"></div>
+    <div class="bg-[url('/assets/smallHill-3.png')] bg-no-repeat bg-[right_-10rem_top_9rem] h-full w-full absolute z-[4]"></div>
+    <img src="/assets/skyGradientPiece.png" alt="A piece of the skybox" class="absolute lg:top-10 top-8 opacity-40 z-0" />
     <PlayerScene client:load />
-    <div class="grid fixed min-w-full lg:grid-flow-col z-[100] h-full">
+    <div class="grid lg:grid-flow-col z-[100] h-fit mt-5">
       <div class="2xl:w-[40rem] xl:w-[30rem] lg:w-[25rem] w-full relative z-50">
         <div id="bounds" class="w-full absolute lg:top-[6rem] xl:top-[15rem] top-[32rem] h-[35vh] lg:h-[80vh] bottom-0 z-20 left-0 self-center"></div>
         <InfoModal />
       </div>
-      <div class="px-4 md:px-20 lg:px-10 2xl:px-24 w-full flex z-[100] justify-center py-10">
+      <div class="px-4 md:px-20 lg:px-10 2xl:px-24 w-full flex z-[100] justify-center">
         <Projects />
       </div>
     </div>

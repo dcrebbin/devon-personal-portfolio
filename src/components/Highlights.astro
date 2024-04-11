@@ -2,25 +2,18 @@
 import Down from "../icons/Down";
 import Github from "../icons/Github";
 import Website from "../icons/Website";
+
+interface Frontmatter {
+  title: string;
+  description?: string;
+}
+
+const posts = await Astro.glob<Frontmatter>("../markdown/*.md");
 ---
 
 <div class="w-full text-center p-2">
   <h2 class="text-2xl mb-2" id="highlights">Highlights✨</h2>
-  <div class="flex flex-col items-center">
-    <div class="flex gap-2 items-center">
-      <h3 class="text-2xl">Ourland (land.org.au)</h3>
-      <a class="hover:-translate-y-[2px] hover:cursor-pointer" href={"https://land.org.au"} target="_blank"><Website /></a>
-      <a href="#Ourland"><Down /></a>
-    </div>
-    <p>Indigenous Digital Map & Non Profit</p>
-    <img src="/projects/web-apps/ourland.png" />
-    <div class="text-left p-2 font-[Roboto] flex flex-col gap-2">
-      <p><strong>Ourland</strong> is an <a target="_blank" href="https://register.oric.gov.au/PrintCorporationSearch.aspx?corporationName=ourland" class="font-bold underline">Indigenous Corporation</a> & Non Profit Charity (status in-progress) to provide an educational resource for people to learn about Australian Indigenous land, languages & place names.</p>
-      <p>It's main goal is to prevent the extinction of Indigenous cultural data & languages.</p>
-      <p>I'm currently the only director & person on the project but will be hugely ramping up efforts on this due to it's potential positive impact.</p>
-      <p>I have also started to develop <a href="#AIOR" class="font-bold underline">AIOR</a> because of it - an AI orchestration research tool to enable mass data model research & generation.</p>
-    </div>
-  </div>
+  {posts.map(({ Content }) => <Content />)}
   <div class="flex flex-col items-center">
     <div class="flex gap-2 items-center">
       <h3 class="text-2xl">langpal</h3>

@@ -7,7 +7,7 @@ layout: ../layouts/MarkdownHighlightsLayout.astro
 subtitle: Indigenous Digital Map & Non Profit
 coverType: image
 ---
-![](./public/projects/web-apps/ourland.png/)
+![](/public/projects/web-apps/ourland.png)
 
 Ourland is an [Indigenous Corporation](https://register.oric.gov.au/PrintCorporationSearch.aspx?corporationName=ourland) & Non Profit Charity (status in-progress) to provide an educational resource for people to learn about Australian Indigenous land, languages & place names.
 

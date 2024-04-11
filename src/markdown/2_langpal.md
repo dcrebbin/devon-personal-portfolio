@@ -2,7 +2,7 @@
 title: langpal
 website: https://withlangpal.com
 timelineLink: langpal
-openSource: null;
+openSource: null
 videoDemoId: o_gC8LwMK0A
 layout: ../layouts/MarkdownHighlightsLayout.astro
 subtitle: Mandarin & Cantonese phrasebook

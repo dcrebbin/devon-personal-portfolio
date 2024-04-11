@@ -8,7 +8,7 @@ layout: ../layouts/MarkdownHighlightsLayout.astro
 subtitle: Mandarin & Cantonese phrasebook
 coverType: image
 ---
-![](https://imagedelivery.net/B-bofTeW0pZtEXxGfni94g/eeb5e04e-2093-4ee0-2902-0d7c59390700/public)
+![](https://imagedelivery.net/B-bofTeW0pZtEXxGfni94g/2cb435cb-fd40-4a1c-772c-d12301f93f00/public)
 
 langpal is a modern phrasebook for character based languages, based on Anki.
 It allows a user to create custom phrase-lists to then practice both their listening & speaking skills using advanced text to speech generation & character by character pronunciation analysis.

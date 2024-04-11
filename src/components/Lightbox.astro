@@ -18,6 +18,7 @@ import { lightboxImage } from "../store";
       const image = this.querySelector("#light-box-image")?.childNodes[1] as HTMLImageElement | null;
       const lightbox = this.querySelector("#light-box") as HTMLDivElement | null;
       const zoomOut = document.getElementById("zoom-out") as HTMLDivElement | null;
+      const homePage = document.getElementById("home-page") as HTMLDivElement | null;
       let isDragging = false;
 
       const state = {
@@ -28,6 +29,7 @@ import { lightboxImage } from "../store";
       isLightboxOpen.subscribe((isOpen) => {
         lightbox!.style.display = isOpen ? "flex" : "none";
         zoomOut!.style.display = isOpen ? "block" : "none";
+        homePage!.style.filter = isOpen ? "brightness(0.2)" : "none";
         if (!isOpen) {
           lightbox!.style.left = "0";
           lightbox!.style.top = "0";

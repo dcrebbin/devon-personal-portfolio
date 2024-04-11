@@ -30,9 +30,9 @@ const { project, index } = Astro.props;
       </div>
       <h3 class="text-xl">{project.elevatorPitch}</h3>
       {project.imageUrl !== null ? (
-        <div class="relative">
-          <img loading="lazy" class={"w-full h-fit m-4 rounded-md " + project.verticalAspectRatio && project.verticalAspectRatio == true ? "w-[50%]" : ""} src={"/projects" + project.imageUrl} alt={project.project} />{" "}
-          <astro-project data-image-url={"/projects" + project.imageUrl} data-index={index}>
+        <div class="relative flex items-center justify-center">
+          <img loading="lazy" class={"w-full h-fit m-4 rounded-md " + project.verticalAspectRatio && project.verticalAspectRatio == true ? "w-[50%]" : ""} src={project.imageUrl} alt={project.project} />{" "}
+          <astro-project data-image-url={project.imageUrl} data-index={index}>
             <button id="zoom-in" class=" text-white bottom-0 right-0 absolute m-3 bg-black/90 p-2 rounded-md">
               <ZoomIn />
             </button>

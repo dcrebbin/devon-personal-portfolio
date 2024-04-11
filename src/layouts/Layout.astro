@@ -34,12 +34,10 @@ import ZoomOut from "../icons/ZoomOut";
     <div class="w-full h-6 flex items-center justify-center p-2 z-[100] text-black"><p>Use this site!</p><a class="hover:-translate-y-[3px] -translate-y-[2px] hover:cursor-pointer" href={"https://github.com/dcrebbin/modern-gamified-portfolio"} target="_blank"><Github /></a></div>
   </div>
   <body class="overflow">
-    <button style={{ visibility: "hidden" }} id="zoom-out" class="z-[2999] text-white absolute bottom-0 right-0 m-8 bg-black/90 p-2 rounded-md">
+    <button style={{ display: "none" }} id="zoom-out" class="z-[2999] text-white absolute bottom-0 right-0 m-8 bg-black/90 p-2 rounded-md">
       <ZoomOut />
     </button>
-    <div style={{ visibility: "hidden" }} id="light-box">
-      <Lightbox />
-    </div>
+    <Lightbox />
     <div class="flex h-full w-full">
       <slot />
     </div>
@@ -58,20 +56,8 @@ import ZoomOut from "../icons/ZoomOut";
     import { isLightboxOpen } from "../store";
 
     const zoomOut = document.getElementById("zoom-out");
-    const lightBox = document.getElementById("light-box");
-
     zoomOut!.addEventListener("click", () => {
       isLightboxOpen.set(false);
-    });
-
-    isLightboxOpen.subscribe((open) => {
-      if (open) {
-        zoomOut!.style.visibility = "visible";
-        lightBox!.style.visibility = "visible";
-      } else {
-        zoomOut!.style.visibility = "hidden";
-        lightBox!.style.visibility = "hidden";
-      }
     });
   </script>
 

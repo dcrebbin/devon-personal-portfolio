@@ -1,25 +1,38 @@
+---
+import { lightboxImage } from "../store";
+---
+
 <astro-lightbox>
-  <div id="light-box" class="absolute z-[999] w-full h-full flex items-center justify-center drop-shadow-lg">
+  <div style={{ display: "none" }} id="light-box" class="absolute z-[999] w-full h-full flex items-center justify-center drop-shadow-lg">
     <div id="light-box-image" class="relative">
-      <img class="w-96 h-auto scale-[3] pointer-events-none select-none" src="/projects/web-apps/ourland.png" id="image" />
+      <img class="w-96 h-auto scale-[3] pointer-events-none select-none" src={lightboxImage.value} id="image" />
     </div>
   </div>
 </astro-lightbox>
 <script>
-  import { lightboxImage } from "../store";
+  import { lightboxImage, isLightboxOpen } from "../store";
 
   class AstroLightbox extends HTMLElement {
     constructor() {
       super();
       const image = this.querySelector("#light-box-image")?.childNodes[1] as HTMLImageElement | null;
       const lightbox = this.querySelector("#light-box") as HTMLDivElement | null;
-
+      const zoomOut = document.getElementById("zoom-out") as HTMLDivElement | null;
       let isDragging = false;
 
       const state = {
         x: 0,
         y: 0,
       };
+
+      isLightboxOpen.subscribe((isOpen) => {
+        lightbox!.style.display = isOpen ? "flex" : "none";
+        zoomOut!.style.display = isOpen ? "block" : "none";
+        if (!isOpen) {
+          lightbox!.style.left = "0";
+          lightbox!.style.top = "0";
+        }
+      });
 
       lightboxImage.subscribe((src) => {
         console.log(src);

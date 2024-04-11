@@ -3,9 +3,9 @@ import { lightboxImage } from "../store";
 ---
 
 <astro-lightbox>
-  <div style={{ display: "none" }} id="light-box" class="absolute z-[999] w-full h-full flex items-center justify-center drop-shadow-lg">
+  <div style={{ display: "none" }} id="light-box" class="fixed z-[999] w-full h-full flex items-center justify-center drop-shadow-lg">
     <div id="light-box-image" class="relative">
-      <img class="w-96 h-auto scale-[3] pointer-events-none select-none" src={lightboxImage.value} id="image" />
+      <img class="w-96 h-auto scale-[2] pointer-events-none select-none" src={lightboxImage.value} id="image" />
     </div>
   </div>
 </astro-lightbox>
@@ -40,6 +40,24 @@ import { lightboxImage } from "../store";
         console.log(src);
         image!.src = src;
       });
+
+      // mobile drag
+      lightbox?.addEventListener("touchstart", (e) => {
+        isDragging = true;
+        state.x = e.touches[0].clientX - lightbox.offsetLeft;
+        state.y = e.touches[0].clientY - lightbox.offsetTop;
+      });
+
+      document.addEventListener("touchmove", (e) => {
+        if (!isDragging) return;
+        lightbox!.style.left = e.touches[0].clientX - state.x + "px";
+        lightbox!.style.top = e.touches[0].clientY - state.y + "px";
+      });
+
+      document.addEventListener("touchend", () => {
+        isDragging = false;
+      });
+
 
       lightbox?.addEventListener("mousedown", (e) => {
         isDragging = true;

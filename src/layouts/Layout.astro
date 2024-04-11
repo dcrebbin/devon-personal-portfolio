@@ -5,7 +5,7 @@ import ZoomOut from "../icons/ZoomOut";
 ---
 
 <!doctype html>
-<html lang="en" class="overflow-hidden">
+<html lang="en" class="overflow-hidden overflow-y-scroll">
   <head>
     <meta charset="UTF-8" />
     <meta name="description" content="Portfolio for Devon Crebbin" />
@@ -34,7 +34,7 @@ import ZoomOut from "../icons/ZoomOut";
     <div class="w-full h-6 flex items-center justify-center p-2 z-[100] text-black"><p>Use this site!</p><a class="hover:-translate-y-[3px] -translate-y-[2px] hover:cursor-pointer" href={"https://github.com/dcrebbin/modern-gamified-portfolio"} target="_blank"><Github /></a></div>
   </div>
   <body class="overflow">
-    <button style={{ display: "none" }} id="zoom-out" class="z-[2999] text-white absolute bottom-0 right-0 m-8 bg-black/90 p-2 rounded-md">
+    <button style={{ display: "none" }} id="zoom-out" class="z-[2999] text-white fixed bottom-0 right-0 m-8 bg-black/90 p-2 rounded-md">
       <ZoomOut />
     </button>
     <Lightbox />
@@ -54,6 +54,9 @@ import ZoomOut from "../icons/ZoomOut";
 
   <script>
     import { isLightboxOpen } from "../store";
+
+    const lightbox = document.getElementById("light-box");
+    const homePage = document.getElementById("home-page");
 
     const zoomOut = document.getElementById("zoom-out");
     zoomOut!.addEventListener("click", () => {

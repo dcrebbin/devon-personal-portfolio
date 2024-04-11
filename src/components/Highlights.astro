@@ -1,8 +1,4 @@
 ---
-import Down from "../icons/Down";
-import Github from "../icons/Github";
-import Website from "../icons/Website";
-
 interface Frontmatter {
   title: string;
   description?: string;
@@ -13,97 +9,7 @@ const posts = await Astro.glob<Frontmatter>("../markdown/*.md");
 
 <div class="w-full text-center p-2">
   <h2 class="text-2xl mb-2" id="highlights">Highlights✨</h2>
-  {posts.map(({ Content }) => <Content />)}
-  <div class="flex flex-col items-center">
-    <div class="flex gap-2 items-center">
-      <h3 class="text-2xl">langpal</h3>
-      <a class="hover:-translate-y-[2px] hover:cursor-pointer" href={"https://withlangpal.com"} target="_blank"><Website /></a>
-    </div>
-    <p>Cantonese & Mandarin Phrasebook</p>
-    <img src="/projects/mobile-apps/langpal.png" />
-    <div class="text-left p-2 font-[Roboto] flex flex-col gap-2">
-      <p><strong>langpal</strong> is a modern phrasebook for character based languages, based on Anki.</p>
-      <p>It allows a user to create custom phraselists to then practice both their listening & speaking skills using advanced text to speech generation & character by character prounincation analysis.</p>
-      <p>I made it to ease my social anxiety & fear when prepraring to speak either Mandarin or Cantonese out in the public</p>
-      <p>For this project I've been getting help from <a target="_blank" class="font-bold underline" href="https://repository.eduhk.hk/en/persons/chaak-ming%E5%8A%89%E6%93%87%E6%98%8E-lau">Dr Chaak-Ming Lau</a> a Cantonese lingustics PhD and the creator of <a class="font-bold underline" target="_blank" href="https://words.hk">words.hk</a>. With his helped I developed <a class="font-bold underline" href="https://pub.dev/packages/jyutping">Jyutping for Flutter</a> - a pub.dev package that allows for Chinese character to Juytping conversion.</p>
-      <p>From a stylistic ddangle, this project was influenced by a fun graphic design journey I went on with exploring a new take on Alegria/Corporate Memphis.</p>
-      <p>This project will also be the basis of a talk I will be doing at Google Melbourne for Monash Universties GDG Student Group, in which students will be able to apply to get the flutter source code.</p>
-      <p>The project also leverages Flutter "Code Push" by <a target="_blank" class="font-bold underline" href="https://github.com/eseidel">Eric Seidel</a> (Creator of Flutter) & his team at <a class="font-bold underline" target="_blank" href="https://shorebird.dev/">Shorebird</a>.</p>
-      <div class="w-full flex justify-center">
-        <div class="w-full h-full">
-          <iframe
-            style={{
-              width: "100%",
-              height: "100%",
-              minHeight: "400px",
-            }}
-            src="https://www.youtube.com/embed/o_gC8LwMK0A?si=K8tgwQ8o_zl_3DIY"
-            title="YouTube video player"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            referrerpolicy="strict-origin-when-cross-origin"
-            allowfullscreen></iframe>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="flex flex-col items-center">
-    <div class="flex gap-2 items-center">
-      <h3 class="text-2xl">Meta Glasses GPT Vision API</h3>
-      <a class="hover:-translate-y-[2px] hover:cursor-pointer" target="_blank" href={"https://github.com/dcrebbin/meta-vision-api"} target="_blank"><Github /></a>
-      <a href="#Meta Glasses - GPT4 Vision (Food Log)"><Down /></a>
-    </div>
-    <p>Hacky API for the Meta Glasses to use GPT Vision</p>
-    <div class="w-full flex justify-center">
-      <iframe
-        style={{
-          width: "100%",
-          height: "100%",
-          minHeight: "400px",
-        }}
-        src="https://www.youtube.com/embed/PiEDrcLCmew?si=KjPqp2jyy5743ihd"
-        title="YouTube video player"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-        referrerpolicy="strict-origin-when-cross-origin"
-        allowfullscreen></iframe>
-    </div>
-    <div class="text-left p-2 font-[Roboto] flex flex-col gap-2">
-      <p>This project uses the latest version of the Meta Rayban Smart Glasses and the GPT vision API to automtically log your food via a voice command.</p>
-      <p>I achieved this by exploting the Meta glasses ability to send photos to your friends on Messenger via a voice command. i.e: "Hey Meta, send a photo to John blahblah".</p>
-      <p>All I needed to do, was to create a fake Facebook account (sorry fb TOS) that sounded similar to "My Food log" and have a listener attached to that account which would trigger anytime I would send a photo to it.</p>
-      <p>From there I sent the photo to OpenAI and stored the response in a fake myfitness web app I made for this demo (due to no MFP public API)</p>
-      <p>This project went semi-semi viral on Hacker News and in turn got my noticed by some people from the Meta Reality Labs team who offered me an interview.</p>
-      <p>I had never done leetcode before and so for this partciular opportunity the timing did not work out. I will defeat DSA eventually though!</p>
-    </div>
-  </div>
-  <div class="flex flex-col items-center">
-    <div class="flex gap-2 items-center">
-      <h3 class="text-2xl">Gemini Coach</h3>
-      <a class="hover:-translate-y-[2px] hover:cursor-pointer" href={"https://github.com/dcrebbin/gemini-coach"} target="_blank"><Github /></a>
-      <a href="#gemini-coach"><Down /></a>
-    </div>
-    <p>AI (pseudo) HR Tool for Googlers</p>
-    <div class="w-full flex justify-center">
-      <iframe
-        style={{
-          width: "100%",
-          height: "100%",
-          minHeight: "400px",
-        }}
-        src="https://www.youtube.com/embed/rmG4C2d9IVE"
-        title="YouTube video player"
-        frameborder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-        referrerpolicy="strict-origin-when-cross-origin"
-        allowfullscreen></iframe>
-    </div>
-    <div class="text-left p-2 font-[Roboto] flex flex-col gap-2">
-      <p>This is a conversational AI that combines listening, speech & a brain - via VertexAI</p>
-      <p>As part of a series of projects based on combing these mediums, I created this version try out the new Angular 17 as well as the experience developing for Gemini & VertexAI APIs.</p>
-      <p>This project was also the basis of a talk I did at Google Melbourne for a GDG event.</p>
-      <p>The talk was about how to create an immersive AI experience. From a high level, these conversational AI tools are still in their infancy and we haven't had enough time to properly explore the optimal medium for interacting with these tools.</p>
-      <p>The talk is availaikikble <a class="font-bold underline" target="_blank" href="https://www.youtube.com/watch?v=xNAv5FMgQ9Q">here</a> - I am very out of practice with public speaking but was a fun event to be at.</p>
-      <p>There's still a lot more to add to this project, like; Retrival Augmented Generation (RAG) via LangChain, using Gemini 1.5 for better conversations and long term vector storage solution to remember each individual.</p>
-      <p>Fun fact: I named it Gemini Coach a week before Bard rebranded!</p>
-    </div>
+  <div class="flex flex-col gap-4">
+    {posts.map(({ Content }) => <Content />)}
   </div>
 </div>

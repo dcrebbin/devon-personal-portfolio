@@ -182,7 +182,7 @@ export default function PlayerScene() {
   const animationTransition: ValueAnimationTransition = {
     duration: runningAnimationSpeed,
     repeat: Infinity,
-    repeatType: "reverse",
+    repeatType: "mirror",
     ease: "linear",
   };
 
@@ -199,15 +199,17 @@ export default function PlayerScene() {
           <div className="absolute border-white -translate-x-10 z-20 rounded-b-lg  border-b-transparent border-b-[40px] border-r-[60px]"></div>
         </div>
         <div className="h-[10rem] w-[5rem] relative" id="playerSprite">
-          <motion.img ref={faceRef} src="/assets/player/head.png" animate={isMoving ? { translateY: [0, -8] } : { translateY: [] }} transition={animationTransition} className="absolute left-[-3px]" alt="Devon Crebbin" />
-          <motion.img src="/assets/player/body.png" animate={isMoving ? { translateY: [0, -10] } : { translateY: [] }} transition={animationTransition} className="absolute top-[2.5rem] z-40" alt="Devon Crebbin" />
-          <motion.img src="/assets/player/leftArm.png" style={{ transformOrigin: "top right" }} animate={isMoving ? { rotateZ: [20, -45, -90, -120] } : { rotateZ: [] }} transition={animationTransition} className="absolute top-[2.8rem] right-16 z-20" alt="Devon Crebbin" />
-          <motion.img src="/assets/player/rightArm.png" style={{ transformOrigin: "top left" }} animate={isMoving ? { rotateZ: [-20, 45, 90, 120] } : { rotateZ: [] }} transition={animationTransition} className="absolute top-[2.6rem] left-[1.8rem] z-50" alt="Devon Crebbin" />
-          <motion.img src="/assets/player/leftLeg.png" style={{ transformOrigin: "top" }} animate={isMoving ? { rotateZ: [40, -0, -45, -75] } : { rotateZ: [] }} transition={animationTransition} className="absolute top-[6rem] left-[-0.5rem] z-40" alt="Devon Crebbin" />
-          <motion.img src="/assets/player/rightLeg.png" style={{ transformOrigin: "top" }} animate={isMoving ? { rotateZ: [-40, 0, 45, 75] } : { rotateZ: [] }} transition={animationTransition} className="absolute top-[6.2rem] left-[1.3rem] z-40" alt="Devon Crebbin" />
+          <motion.img ref={faceRef} src="/assets/player/head.png" animate={isMoving ? { translateY: [0, -1, -2, -3, -4, -5, -6, -7] } : { translateY: [] }} transition={animationTransition} className="absolute left-[-3px]" alt="Head sprite" />
+          <motion.img src="/assets/player/body.png" animate={isMoving ? { translateY: [0, -1, -2, -3, -4, -5, -6, -7] } : { translateY: [] }} transition={animationTransition} className="absolute top-[2.5rem] z-40" alt="Body sprite" />
+          <motion.img src="/assets/player/leftArm.png" style={{ transformOrigin: "top right" }} animate={isMoving ? { rotateZ: [15, 0, -15, -30, -45, -60, -75, -90, -105] } : { rotateZ: [] }} transition={animationTransition} className="absolute top-[2.8rem] right-16 z-20 " alt="Left arm sprite" />
+          <motion.img src="/assets/player/rightArm.png" style={{ transformOrigin: "top left" }} animate={isMoving ? { rotateZ: [-15, 0, 15, 30, 45, 60, 75, 90, 105] } : { rotateZ: [] }} transition={animationTransition} className="absolute top-[2.6rem] left-[1.8rem] z-50 " alt="Right arm sprite" />
+          <motion.img src="/assets/player/leftLeg.png" style={{ transformOrigin: "top" }} animate={isMoving ? { rotateZ: [45, 30, 15, 0, -15, -30, -45, -60, -75] } : { rotateZ: [] }} transition={animationTransition} className="absolute top-[6rem] left-[-0.5rem] z-40 " alt="Left leg sprite" />
+          <motion.img src="/assets/player/rightLeg.png" style={{ transformOrigin: "top" }} animate={isMoving ? { rotateZ: [-45, -30, -15, 0, 15, 30, 45, 60, 75] } : { rotateZ: [] }} transition={animationTransition} className="absolute top-[6.2rem] left-[1.3rem] z-40 " alt="Right leg sprite" />
           <div className="w-[3rem] h-[1.5rem] bg-black/30 rounded-full blur-sm absolute z-30 top-44"></div>
         </div>
       </div>
     </div>
   );
 }
+
+// 40, -0, -45, -75]

@@ -5,7 +5,7 @@ import { lightboxImage } from "../store";
 <astro-lightbox>
   <div style={{ display: "none" }} id="light-box" class="fixed z-[999] w-full h-full flex items-center justify-center drop-shadow-lg">
     <div id="light-box-image" class="relative">
-      <img class="w-96 h-auto scale-[2] pointer-events-none select-none" src={lightboxImage.value} id="image" />
+      <img class="w-96 h-auto scale-[2] md:scale-[2.5] lg:scale-[3] xl:scale-[4] pointer-events-none select-none" src={lightboxImage.value} id="image" />
     </div>
   </div>
 </astro-lightbox>
@@ -57,7 +57,6 @@ import { lightboxImage } from "../store";
       document.addEventListener("touchend", () => {
         isDragging = false;
       });
-
 
       lightbox?.addEventListener("mousedown", (e) => {
         isDragging = true;

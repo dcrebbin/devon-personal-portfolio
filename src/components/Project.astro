@@ -1,8 +1,9 @@
 ---
 import Github from "../icons/Github";
 import Website from "../icons/Website";
+import ZoomIn from "../icons/ZoomIn";
 
-const { project } = Astro.props;
+const { project, index } = Astro.props;
 ---
 
 {
@@ -11,8 +12,8 @@ const { project } = Astro.props;
       {project.text}
     </h2>
   ) : (
-    <div class="flex flex-col w-fit items-center justify-center h-min">
-      <div class="flex items-center gap-2" id={project.project}>
+    <div class="flex flex-col w-fit items-center justify-center h-min" id={`project-${index}`}>
+      <div class="flex items-center gap-2">
         <h3 class="text-2xl">{project.project}</h3>
         {project.link == null ? (
           <p>{project.status}</p>
@@ -28,9 +29,40 @@ const { project } = Astro.props;
         )}
       </div>
       <h3 class="text-xl">{project.elevatorPitch}</h3>
-      {project.imageUrl !== null ? <img loading="lazy" class={"w-full h-fit m-4 rounded-md " + project.verticalAspectRatio && project.verticalAspectRatio == true ? "w-[50%]" : ""} src={"/projects" + project.imageUrl} alt={project.project} /> : <p class="italic p-2">No image available</p>}
+      {project.imageUrl !== null ? (
+        <div class="relative">
+          <img loading="lazy" class={"w-full h-fit m-4 rounded-md " + project.verticalAspectRatio && project.verticalAspectRatio == true ? "w-[50%]" : ""} src={"/projects" + project.imageUrl} alt={project.project} />{" "}
+          <astro-project data-image-url={"/projects" + project.imageUrl} data-index={index}>
+            <button id="zoom-in" class=" text-white bottom-0 right-0 absolute m-3 bg-black/90 p-2 rounded-md">
+              <ZoomIn />
+            </button>
+          </astro-project>
+        </div>
+      ) : (
+        <p class="italic p-2">No image available</p>
+      )}
+
       <p class="p-2 text-xl">Stack: {project.techStack}</p>
     </div>
   )
 }
 <hr class="p-2 w-full" />
+
+<script>
+  import { isLightboxOpen, lightboxImage } from "../store";
+  class AstroProject extends HTMLElement {
+    constructor() {
+      super();
+      const index = this.getAttribute("data-index");
+      const imageUrl = this.getAttribute("data-image-url")?.toString();
+      const projectDiv = document.getElementById(`project-${index}`);
+      const button = projectDiv!.querySelector("#zoom-in");
+      button!.addEventListener("click", () => {
+        lightboxImage.set(imageUrl || "");
+        isLightboxOpen.set(true);
+      });
+    }
+  }
+
+  customElements.define("astro-project", AstroProject);
+</script>

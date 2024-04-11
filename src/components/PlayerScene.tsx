@@ -188,7 +188,7 @@ export default function PlayerScene() {
 
   return (
     <div className="z-[10]">
-      <div id="player" className="absolute top-80 left-72 md:left-[34rem] lg:left-72 lg:top-96 xl:left-[25rem] 2xl:left-[35rem] xl:top-96">
+      <div id="player" className="absolute top-72 left-72 md:left-[34rem] lg:left-72 lg:top-96 xl:left-[25rem] 2xl:left-[35rem] xl:top-96">
         <div className="-translate-x-12 lg:-translate-x-10 lg:-translate-y-10" hidden={!isInfoOpen}>
           <div className="w-72 h-32 bg-white text-black absolute z-20 p-3 -translate-x-[14em] -translate-y-[8em] rounded-3xl">
             <p id="speechContent"></p>

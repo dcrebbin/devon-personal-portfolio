@@ -1,0 +1,37 @@
+---
+import type { MarkdownLayoutProps } from "astro";
+import Website from "../icons/Website";
+
+type Props = MarkdownLayoutProps<{
+  title: string;
+  author: string;
+  timelineLink: string;
+  url: string;
+  subtitle: string;
+}>;
+
+const { frontmatter }: Props = Astro.props;
+---
+
+<html>
+  <head>
+    <title>{frontmatter.title}</title>
+  </head>
+  <body>
+    <div class="flex flex-row justify-center gap-1">
+      <h1 class="text-2xl">{frontmatter.title}</h1>
+      <a href={frontmatter.url}><Website /> </a>
+    </div>
+    <h2>{frontmatter!.subtitle}</h2>
+    <div class="flex flex-col gap-2 text-left justify-start font-[Roboto]">
+      <slot />
+    </div>
+  </body>
+</html>
+
+<style>
+  a {
+    text-decoration: underline;
+    font-weight: bold;
+  }
+</style>

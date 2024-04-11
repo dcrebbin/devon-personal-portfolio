@@ -1,0 +1,39 @@
+<astro-lightbox>
+  <div id="light-box" class="fixed z-[999] w-full h-full bg-red-400">
+    <div id="image" class="absolute">
+      <img class="w-96 h-auto scale-[3] pointer-events-none select-none" src="/projects/web-apps/ourland.png" id="image" />
+    </div>
+  </div>
+</astro-lightbox>
+
+<script>
+  // Define the behaviour for our new type of HTML element.
+  class AstroLightbox extends HTMLElement {
+    constructor() {
+      super();
+      const image = this.querySelector("#image") as HTMLImageElement | null;
+      const lightbox = this.querySelector("#light-box") as HTMLDivElement | null;
+
+      let isDragging = false;
+
+      // Each time the button is clicked, update the count.
+      lightbox!.addEventListener("mousedown", () => {
+        isDragging = true;
+      });
+
+      lightbox!.addEventListener("mouseup", () => {
+        isDragging = false;
+      });
+
+      lightbox!.addEventListener("mousemove", (event) => {
+        if (!isDragging) return;
+
+        const { movementX, movementY } = event as MouseEvent;
+        image!.style.transform = `translate(${movementX}px, ${movementY}px)`;
+      });
+    }
+  }
+
+  // Tell the browser to use our AstroHeart class for <astro-heart> elements.
+  customElements.define("astro-lightbox", AstroLightbox);
+</script>

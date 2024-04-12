@@ -7,11 +7,14 @@ import mdx from "@astrojs/mdx";
 
 // https://astro.build/config
 export default defineConfig({
+  devToolbar: {
+    enabled: false,
+  },
   output: "server",
   adapter: vercel({
     webAnalytics: {
-      enabled: true
-    }
+      enabled: true,
+    },
   }),
-  integrations: [tailwind(), react(), mdx()]
+  integrations: [tailwind(), react(), mdx()],
 });

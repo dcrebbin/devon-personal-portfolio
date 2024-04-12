@@ -211,5 +211,3 @@ export default function PlayerScene() {
     </div>
   );
 }
-
-// 40, -0, -45, -75]

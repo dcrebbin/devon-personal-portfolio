@@ -38,6 +38,7 @@ import ZoomOut from "../icons/ZoomOut";
       <ZoomOut />
     </button>
     <Lightbox />
+    <div style={{ display: "none" }} id="back-drop" class="bg-black/90 w-full h-full fixed z-[99]"></div>
     <div id="home-page" class="flex h-full w-full">
       <slot />
     </div>
@@ -55,8 +56,7 @@ import ZoomOut from "../icons/ZoomOut";
   <script>
     import { isLightboxOpen } from "../store";
 
-    const lightbox = document.getElementById("light-box");
-    const homePage = document.getElementById("home-page");
+
 
     const zoomOut = document.getElementById("zoom-out");
     zoomOut!.addEventListener("click", () => {

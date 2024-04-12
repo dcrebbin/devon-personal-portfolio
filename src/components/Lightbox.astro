@@ -4,8 +4,10 @@ import { lightboxImage } from "../store";
 
 <astro-lightbox>
   <div style={{ display: "none" }} id="light-box" class="fixed z-[999] w-full h-full flex items-center justify-center drop-shadow-lg">
-    <div id="light-box-image" class="relative">
-      <img class="w-96 h-auto scale-[2] md:scale-[2.5] lg:scale-[3] xl:scale-[4] pointer-events-none select-none" src={lightboxImage.value} id="image" />
+    <div id="light-box-back-drop" class="fixed z-[998] w-full h-full opacity-50"></div>
+    <div id="light-box-blocker" class="absolute bg-red-500 w-96 scale-[4] z-[2001] bg-yellow-500/30 30" style={{ height: "100px" }}></div>
+    <div id="light-box-image" class="relative z-[2000] flex items-center justify-center">
+      <img class="w-96 h-auto scale-[2] z-[2000] md:scale-[2.5] lg:scale-[3] xl:scale-[4] pointer-events-none select-none" src={lightboxImage.value} id="image" />
     </div>
   </div>
 </astro-lightbox>
@@ -18,9 +20,22 @@ import { lightboxImage } from "../store";
       const image = this.querySelector("#light-box-image")?.childNodes[1] as HTMLImageElement | null;
       const lightbox = this.querySelector("#light-box") as HTMLDivElement | null;
       const zoomOut = document.getElementById("zoom-out") as HTMLDivElement | null;
-      const homePage = document.getElementById("home-page") as HTMLDivElement | null;
+      const backDrop = document.getElementById("back-drop") as HTMLDivElement | null;
+      const lightboxBackDrop = this.querySelector("#light-box-back-drop") as HTMLDivElement | null;
+      const lightboxBlocker = document.getElementById("light-box-blocker") as HTMLDivElement | null;
+
+      lightboxBlocker!.style.height = image!.height + "px";
+
       let isDragging = false;
 
+      lightboxBackDrop!.addEventListener("click", (e) => {
+        const target = e.target as HTMLElement;
+        if (target.id === "light-box-back-drop") isLightboxOpen.set(false);
+      });
+
+      backDrop!.addEventListener("click", () => {
+        isLightboxOpen.set(false);
+      });
       const state = {
         x: 0,
         y: 0,
@@ -29,7 +44,7 @@ import { lightboxImage } from "../store";
       isLightboxOpen.subscribe((isOpen) => {
         lightbox!.style.display = isOpen ? "flex" : "none";
         zoomOut!.style.display = isOpen ? "block" : "none";
-        homePage!.style.filter = isOpen ? "brightness(0.2)" : "none";
+        backDrop!.style.display = isOpen ? "block" : "none";
         if (!isOpen) {
           lightbox!.style.left = "0";
           lightbox!.style.top = "0";

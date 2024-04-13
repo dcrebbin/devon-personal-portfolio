@@ -33,11 +33,6 @@ export default function PlayerScene() {
     playerSprite!.style.transform = `scaleX(${nextPlayerDirection.x < currentPlayerDirection.x ? 1 : -1})`;
   }
 
-  function updatePlayerPosition() {
-    player!.style.left = `${currentPlayerDirection.x}px`;
-    player!.style.top = `${currentPlayerDirection.y}px`;
-  }
-
   function updateNextDirections() {
     if (nextPlayerDirection.x < bounds.left) nextPlayerDirection.x = bounds.left;
     if (nextPlayerDirection.x + playerWidth > bounds.right) nextPlayerDirection.x = bounds.right - playerWidth;
@@ -55,6 +50,10 @@ export default function PlayerScene() {
     const directionX = nextPlayerDirection.x - currentPlayerDirection.x;
     const directionY = nextPlayerDirection.y - currentPlayerDirection.y;
     const distance = Math.sqrt(directionX * directionX + directionY * directionY);
+    updatePlayerPosition(distance, directionX, directionY);
+  }
+
+  function updatePlayerPosition(distance: number, directionX: number, directionY: number) {
     if (distance < PLAYER_SCENE_CONFIG.playerSpeed) {
       currentPlayerDirection.x = nextPlayerDirection.x;
       currentPlayerDirection.y = nextPlayerDirection.y;
@@ -62,7 +61,9 @@ export default function PlayerScene() {
       currentPlayerDirection.x += (directionX / distance) * PLAYER_SCENE_CONFIG.playerSpeed;
       currentPlayerDirection.y += (directionY / distance) * PLAYER_SCENE_CONFIG.playerSpeed;
     }
-    updatePlayerPosition();
+
+    player!.style.left = `${currentPlayerDirection.x}px`;
+    player!.style.top = `${currentPlayerDirection.y}px`;
   }
 
   function updateBounds() {
@@ -115,7 +116,7 @@ export default function PlayerScene() {
 
   function resetFace() {
     const face = faceRef.current as unknown as HTMLImageElement;
-    face.src = "/assets/player/head.png";
+    face.src = PLAYER_SCENE_CONFIG.mouthClosedSprite;
   }
 
   function stopFakeSpeaking() {
@@ -127,9 +128,9 @@ export default function PlayerScene() {
     let i = 0;
     speakingInterval = setInterval(() => {
       if (i % 2 == 0) {
-        face.src = "/assets/player/head-speaking.png";
+        face.src = PLAYER_SCENE_CONFIG.mouthOpenSprite;
       } else {
-        face.src = "/assets/player/head.png";
+        face.src = PLAYER_SCENE_CONFIG.mouthClosedSprite;
       }
       i++;
     }, PLAYER_SCENE_CONFIG.speechSpeed);

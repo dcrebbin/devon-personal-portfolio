@@ -5,6 +5,8 @@ export const PLAYER_SCENE_CONFIG = {
   speechSpeed: 200,
   playerSpeed: 5,
   runningAnimationSpeed: 0.55,
+  mouthClosedSprite: "/assets/player/head.png",
+  mouthOpenSprite: "/assets/player/head-speaking.png",
 };
 
 export const PROJECTS = [

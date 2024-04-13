@@ -1,5 +1,5 @@
 ---
-import { lightboxImage } from "../store";
+import { lightboxImage } from "../../store";
 ---
 
 <astro-lightbox>
@@ -12,7 +12,7 @@ import { lightboxImage } from "../store";
   </div>
 </astro-lightbox>
 <script>
-  import { lightboxImage, isLightboxOpen } from "../store";
+  import { isLightboxOpen, lightboxImage } from "../../store";
 
   class AstroLightbox extends HTMLElement {
     constructor() {
@@ -56,7 +56,6 @@ import { lightboxImage } from "../store";
         image!.src = src;
       });
 
-      // mobile drag
       lightbox?.addEventListener("touchstart", (e) => {
         isDragging = true;
         state.x = e.touches[0].clientX - lightbox.offsetLeft;

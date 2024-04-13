@@ -14,7 +14,8 @@
     "start": "astro dev",
     "build": "astro check && astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "i18:generate": "npx astro-i18next generate"
   },
   "dependencies": {
     "@astrojs/check": "^0.5.10",
@@ -26,6 +27,7 @@
     "@types/react-router": "^5.1.20",
     "@vercel/analytics": "^1.2.2",
     "astro": "^4.5.17",
+    "astro-i18next": "^1.0.0-beta.21",
     "framer-motion": "^11.0.5",
     "nanostores": "^0.10.3",
     "react": "^18.2.0",

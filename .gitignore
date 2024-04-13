@@ -6,7 +6,8 @@ dist/
 
 # dependencies
 node_modules/
-
+# Testing to see if it's possible to not have to commit the i18n generated pages
+/src/pages/
 # logs
 npm-debug.log*
 yarn-debug.log*

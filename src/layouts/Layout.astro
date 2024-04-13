@@ -2,17 +2,19 @@
 import Lightbox from "../components/utility/Lightbox.astro";
 import Github from "../icons/Github";
 import ZoomOut from "../icons/ZoomOut";
+import i18next, { t } from "i18next";
+import { Trans, HeadHrefLangs } from "astro-i18next/components";
 ---
 
 <!doctype html>
-<html lang="en" class="overflow-hidden overflow-y-auto">
+<html lang={i18next.language} class="overflow-hidden overflow-y-auto">
   <head>
     <meta charset="UTF-8" />
     <meta name="description" content="Portfolio for Devon Crebbin" />
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
-    <title>Devon Quest</title>
+    <title>{t("site.title")}</title>
     <script defer data-domain="dcrebb.in" src="https://plausible.io/js/script.js"></script>
     <link rel="stylesheet" href="/_astro/src/global.css" />
     <style>
@@ -25,6 +27,7 @@ import ZoomOut from "../icons/ZoomOut";
         src: url("/fonts/Roboto-Regular.ttf");
       }
     </style>
+    <HeadHrefLangs />
   </head>
   <div class="text-md fixed text-center p-1 flex flex-col justify-center items-center gap-1 w-full text-black bottom-0 z-30">
     <p>🖤💛❤️</p>
@@ -56,13 +59,9 @@ import ZoomOut from "../icons/ZoomOut";
   <script>
     import { isLightboxOpen } from "../store";
 
-
-
     const zoomOut = document.getElementById("zoom-out");
     zoomOut!.addEventListener("click", () => {
       isLightboxOpen.set(false);
     });
   </script>
-
-
 </html>

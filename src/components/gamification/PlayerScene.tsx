@@ -156,7 +156,7 @@ export default function PlayerScene() {
   }
 
   function assignVariables() {
-    const player = document.getElementById("player");
+    player = document.getElementById("player");
     playerSprite = document.getElementById("playerSprite");
 
     if (!player) return;

@@ -1,3 +1,12 @@
+export const INTRODUCTION_TEXT = "Hey how's it going. My name's Devon and I've been a software developer for the Australian Government for over 5 years - focusing on web development & innovation!";
+
+export const PLAYER_SCENE_CONFIG = {
+  typingSpeech: 43,
+  speechSpeed: 200,
+  playerSpeed: 5,
+  runningAnimationSpeed: 0.55,
+};
+
 export const PROJECTS = [
   {
     type: "title",

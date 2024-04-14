@@ -1,0 +1,23 @@
+<astro-language-selector>
+  <select class="w-52" id="language-selector">
+    <option value="en">English</option>
+    <option value="hi">Hindi</option>
+    <option value="zh">Mandarin</option>
+  </select>
+
+  <script>
+    class AstroLoading extends HTMLElement {
+      constructor() {
+        super();
+      }
+
+      connectedCallback() {
+        this.querySelector("#language-selector")?.addEventListener("change", (e: Event) => {
+          const lang = (e.target as HTMLSelectElement).value;
+          this.dispatchEvent(new CustomEvent("languageChange", { detail: lang }));
+        });
+      }
+    }
+    customElements.define("astro-language-selector", AstroLoading);
+  </script>
+</astro-language-selector>

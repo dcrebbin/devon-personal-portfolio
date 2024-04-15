@@ -182,7 +182,7 @@ export default function PlayerScene() {
     document.addEventListener("mousedown", (e) => {
       const target = e.target as HTMLElement;
 
-      if (target.closest("BUTTON") || target.closest("a")) {
+      if (target.closest("BUTTON") || target.closest("a") || target.closest("SELECT") || target.closest("OPTION")) {
         const button = target.closest("BUTTON");
 
         if (button?.id == "info") {

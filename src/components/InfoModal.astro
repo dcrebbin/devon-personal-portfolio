@@ -4,12 +4,14 @@ import LinkedIn from "../icons/LinkedIn";
 import Email from "../icons/Email";
 import Info from "../icons/Info";
 import Sound from "../icons/Sound";
+import LanguageSelector from "./utility/LanguageSelector.astro";
+import i18next, { t } from "i18next";
 ---
 
 <div class="m-14 bg-white w-64 h-fit rounded-l-3xl rounded-tr-3xl p-4 text-2xl z-[100]">
   <div class="flex items-center justify-between">
     <div class="flex">
-      <p>Hey!</p>
+      <p>{t("infoModal.hello")}</p>
       <p>👋</p>
     </div>
     <div class="flex">
@@ -27,6 +29,7 @@ import Sound from "../icons/Sound";
       </a>
     </div>
   </div>
-  <p>I'm Devon Crebbin</p>
-  <p class="text-lg">Software Developer & Designer</p>
+  <p>{t("infoModal.introduction")}</p>
+  <p class="text-lg">{t("infoModal.jobTitle")}</p>
+  <LanguageSelector />
 </div>

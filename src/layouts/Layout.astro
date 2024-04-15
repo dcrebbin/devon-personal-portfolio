@@ -3,8 +3,7 @@ import Lightbox from "../components/utility/Lightbox.astro";
 import Github from "../icons/Github";
 import ZoomOut from "../icons/ZoomOut";
 import i18next, { t } from "i18next";
-import { Trans, HeadHrefLangs } from "astro-i18next/components";
-import LanguageSelector from "../components/utility/LanguageSelector.astro";
+import { HeadHrefLangs } from "astro-i18next/components";
 ---
 
 <!doctype html>
@@ -15,7 +14,7 @@ import LanguageSelector from "../components/utility/LanguageSelector.astro";
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
-    <title>Devon Quest</title>
+    <title>{t("title")}</title>
     <script defer data-domain="dcrebb.in" src="https://plausible.io/js/script.js"></script>
     <link rel="stylesheet" href="/_astro/src/global.css" />
     <style>

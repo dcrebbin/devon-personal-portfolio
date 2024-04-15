@@ -1,5 +1,8 @@
 {
-  "site": {
-    "title": "Devon खोज"
+  "title": "Devon खोज",
+  "infoModal": {
+    "hello": "नमस्ते!",
+    "introduction": "मेरा नाम डेवोन क्रेबिन है",
+    "jobTitle": "रचनात्मक प्रौद्योगिकीविद्"
   }
 }

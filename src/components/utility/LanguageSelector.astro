@@ -1,23 +1,36 @@
 <astro-language-selector>
-  <select class="w-52" id="language-selector">
-    <option value="en">English</option>
-    <option value="hi">Hindi</option>
-    <option value="zh">Mandarin</option>
+  <select class="w-52 cursor-pointer text-lg" id="language-selector">
+    <option value="" class="cursor-pointer ">English</option>
+    <option value="hi" class="cursor-pointer ">हिन्दी</option>
+    <option value="zh" class="cursor-pointer ">普通话</option>
   </select>
 
   <script>
     class AstroLoading extends HTMLElement {
       constructor() {
         super();
+        const selectedLanguage = document.location.pathname.split("/")[1];
+        const languageSelector = this.querySelector("#language-selector") as HTMLSelectElement;
+        languageSelector.value = selectedLanguage;
       }
 
       connectedCallback() {
         this.querySelector("#language-selector")?.addEventListener("change", (e: Event) => {
           const lang = (e.target as HTMLSelectElement).value;
-          this.dispatchEvent(new CustomEvent("languageChange", { detail: lang }));
+          if (lang === "") document.location.replace(`/`);
+          else {
+            document.location.replace(`/${lang}`);
+          }
         });
       }
     }
     customElements.define("astro-language-selector", AstroLoading);
   </script>
+
+  <style>
+    select:focus {
+      outline: none;
+      cursor: pointer;
+    }
+  </style>
 </astro-language-selector>

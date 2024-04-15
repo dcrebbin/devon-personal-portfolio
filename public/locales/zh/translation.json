@@ -1,6 +1,8 @@
 {
-    "site": {
-      "title": "Devon 寻求"
-    }
+  "title": "Devon 寻求",
+  "infoModal": {
+    "hello": "嘿！",
+    "introduction": "我是德文·克雷宾",
+    "jobTitle": "创意技术专家"
   }
-  
+}

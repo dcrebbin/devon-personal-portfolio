@@ -1,6 +1,8 @@
 {
-    "site": {
-      "title": "Devon Quest"
-    }
+  "title": "Devon Quest",
+  "infoModal": {
+    "hello": "Hey!",
+    "introduction": "I'm Devon Crebbin",
+    "jobTitle": "Creative Technologist"
   }
-  
+}

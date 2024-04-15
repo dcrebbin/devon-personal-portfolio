@@ -15,7 +15,7 @@ import LanguageSelector from "../components/utility/LanguageSelector.astro";
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
-    <title>{t("site.title")}</title>
+    <title>Devon Quest</title>
     <script defer data-domain="dcrebb.in" src="https://plausible.io/js/script.js"></script>
     <link rel="stylesheet" href="/_astro/src/global.css" />
     <style>
@@ -37,15 +37,13 @@ import LanguageSelector from "../components/utility/LanguageSelector.astro";
     <div class="w-full h-6 flex text-center justify-center mb-1 z-[100] text-black pb-2">Site in development</div>
     <div class="w-full h-6 flex items-center justify-center p-2 z-[100] text-black"><p>Use this site!</p><a class="hover:-translate-y-[3px] -translate-y-[2px] hover:cursor-pointer" href={"https://github.com/dcrebbin/modern-gamified-portfolio"} target="_blank"><Github /></a></div>
   </div>
-  <body class="overflow">
+  <body>
     <button style={{ display: "none" }} id="zoom-out" class="z-[2999] text-white fixed bottom-0 right-0 m-8 bg-black/90 p-2 rounded-md">
       <ZoomOut />
     </button>
     <Lightbox />
     <div style={{ display: "none" }} id="back-drop" class="bg-black/90 w-full h-full fixed z-[99]"></div>
-    <div id="home-page" class="flex h-full w-full">
-      <slot />
-    </div>
+    <slot />
   </body>
 
   <style is:global>

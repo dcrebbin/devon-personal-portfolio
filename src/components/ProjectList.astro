@@ -42,10 +42,13 @@ const tabs = [
     activeTab!.style.display = "flex";
   }
 
-  document.querySelectorAll("button").forEach((button) => {
-    button.addEventListener("click", (event: any) => {
-      switchTab(event.target!.id + "View");
-    });
+  const highlightButton = document.getElementById("highlights");
+  highlightButton!.addEventListener("click", (event: any) => {
+    switchTab(event.target!.id + "View");
+  });
+  const timelineButton = document.getElementById("timeline");
+  timelineButton!.addEventListener("click", (event: any) => {
+    switchTab(event.target!.id + "View");
   });
 
   switchTab("highlightsView");

@@ -2,22 +2,9 @@
 export default {
   defaultLocale: "en",
   locales: ["en", "hi", "zh"],
-  routes: {
-    zh: {
-      about: "a-propos",
-      "contact-us": "contactez-nous",
-      products: {
-        index: "produits",
-        categories: "categories",
-      },
-    },
-    hi: {
-      about: "a-proposito",
-      "contact-us": "contactenos",
-      products: {
-        index: "productos",
-        categories: "categorias",
-      },
+  i18nextServer: {
+    backend: {
+      loadPath: "./public/locales/{{lng}}/{{ns}}.json",
     },
   },
 };

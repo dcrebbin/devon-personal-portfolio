@@ -18,11 +18,11 @@ const tabs = [
       ))
     }
   </div>
-  <div class="flex flex-row w-full gap-2 p-2 lg:p-4 md:pr-10 2xl:pr-19 h-[75vh] overflow-y-scroll" id="tabs">
+  <div class="flex flex-row w-full gap-2 p-2 lg:p-4 md:pr-10 2xl:pr-19 h-[75vh]" id="tabs">
     <div id="highlightsView" class="w-full">
       <Highlights />
     </div>
-    <div id="timelineView" class="w-full" style={{ display: "none" }}>
+    <div id="timelineView" style={{ display: "none" }}>
       <ProjectTimeline />
     </div>
   </div>
@@ -39,7 +39,7 @@ const tabs = [
     const activeTab = document.getElementById(tabId);
     const activeButton = document.getElementById(tabId.replace("View", ""));
     activeButton!.classList.add("underline");
-    activeTab!.style.display = "block";
+    activeTab!.style.display = "flex";
   }
 
   document.querySelectorAll("button").forEach((button) => {
@@ -48,6 +48,5 @@ const tabs = [
     });
   });
 
-  const highlightsButton = document.getElementById("highlights");
-  highlightsButton!.classList.add("underline");
+  switchTab("timelineView");
 </script>

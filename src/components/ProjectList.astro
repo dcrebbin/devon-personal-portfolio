@@ -1,23 +1,53 @@
 ---
-import { PROJECTS } from "../constants";
-import Project from "./Project.astro";
 import Highlights from "./Highlights.astro";
-import Timeline from "./Timeline.astro";
+import ProjectTimeline from "./ProjectTimeline.astro";
+
+const tabs = [
+  { id: "highlightsView", title: "Higlights✨", buttonId: "highlights" },
+  { id: "timelineView", title: "Timeline📅", buttonId: "timeline" },
+];
 ---
 
 <div class="w-full flex flex-col items-start bg-white/60 backdrop-blur-sm rounded-3xl drop-shadow-lg h-fit p-4 lg:mt-14 mt-72 my-8">
-  <h2 class="text-3xl">My Projects</h2>
-  <div class="flex flex-row w-full gap-2">
-    <Timeline />
-    <div class="p-2 lg:p-4 md:pr-10 2xl:pr-19 overflow-y-scroll flex flex-col items-center h-[75vh] w-full">
+  <div class="flex flex-row gap-3">
+    {
+      tabs.map((tab) => (
+        <button id={tab.buttonId} class="p-2 hover:underline text-2xl">
+          {tab.title}
+        </button>
+      ))
+    }
+  </div>
+  <div class="flex flex-row w-full gap-2 p-2 lg:p-4 md:pr-10 2xl:pr-19 h-[75vh] overflow-y-scroll" id="tabs">
+    <div id="highlightsView" class="w-full">
       <Highlights />
-      <hr class="p-2 w-full" />
-      <h2 class="text-2xl" id="timeline">Project Timeline</h2>
-      {
-        PROJECTS.map((project: any, index: number) => {
-          return <Project index={index} project={project} />
-        })
-      }
+    </div>
+    <div id="timelineView" class="w-full" style={{ display: "none" }}>
+      <ProjectTimeline />
     </div>
   </div>
 </div>
+
+<script>
+  function switchTab(tabId: any) {
+    const tabs = document.querySelectorAll("#tabs > div");
+    tabs.forEach((tab: any) => {
+      tab.style.display = "none";
+      const button = document.getElementById(tab.id.replace("View", ""));
+      button!.classList.remove("underline");
+    });
+    const activeTab = document.getElementById(tabId);
+    const activeButton = document.getElementById(tabId.replace("View", ""));
+    activeButton!.classList.add("underline");
+    activeTab!.style.display = "block";
+  }
+
+  document.querySelectorAll("button").forEach((button) => {
+    button.addEventListener("click", (event: any) => {
+      switchTab(event.target!.id + "View");
+    });
+  });
+
+  const highlightsButton = document.getElementById("highlights");
+  highlightsButton!.classList.add("underline");
+</script>

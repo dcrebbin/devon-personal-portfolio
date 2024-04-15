@@ -4,9 +4,9 @@ import Project from "./Project.astro";
 import Timeline from "./Timeline.astro";
 ---
 
-<div class="w-full flex flex-row gap-4 justify-start">
+<div class="w-full flex flex-row gap-4 justify-start relative">
   <Timeline />
-  <div class="p-4 flex flex-col overflow-y-scroll items-center">
+  <div id="projectList" class="p-4 flex flex-col overflow-y-scroll items-center">
     {
       PROJECTS.map((project: any, index: number) => {
         return <Project index={index} project={project} />;
@@ -14,3 +14,34 @@ import Timeline from "./Timeline.astro";
     }
   </div>
 </div>
+
+<script>
+  const projectList = document.getElementById("projectList");
+  projectList!.addEventListener("scroll", () => {
+    const yearList = projectList!.querySelectorAll("h2");
+    detectIntersections(yearList);
+  });
+
+  function detectIntersections(yearList: any) {
+    yearList.forEach((project: any) => {
+      const rect = project.getBoundingClientRect();
+      if (rect.top >= 0 && rect.bottom <= window.innerHeight) {
+        yearIsInView(project.id);
+      }
+    });
+  }
+
+  function yearIsInView(year: string) {
+    document.getElementById(year + "Link")?.classList.add("underline");
+    deselectOthers(year);
+  }
+
+  function deselectOthers(selectedYear: string) {
+    const links = document.querySelectorAll("a");
+    links.forEach((link) => {
+      if (link.id !== selectedYear + "Link") {
+        link.classList.remove("underline");
+      }
+    });
+  }
+</script>

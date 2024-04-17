@@ -70,9 +70,9 @@ export const PROJECTS = [
     elevatorPitch: "AI Orchestrated Researching",
     status: "Unreleased",
     techStack: "T3-Stack (Nextjs, Prisma, Tailwind, TRPC)",
-    imageUrl: "https://imagedelivery.net/B-bofTeW0pZtEXxGfni94g/ec07af87-b839-4b32-049b-68aaa9e37200/public",
-    link: null,
-    verticalAspectRatio: true,
+    imageUrl: "https://imagedelivery.net/B-bofTeW0pZtEXxGfni94g/2ad73584-a0f6-40ff-2cc1-88cee00bc700/public",
+    link: "https://aior.app",
+    verticalAspectRatio: false,
   },
   {
     type: "project",

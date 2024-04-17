@@ -14,5 +14,3 @@ Ourland is an [Indigenous Corporation](https://register.oric.gov.au/PrintCorpora
 It's main goal is to prevent the extinction of Indigenous cultural data & languages.
 
 I'm currently the only director & person on the project but will be hugely ramping up efforts on this due to it's potential positive impact.
-
-I have also started to develop [AIOR](#AIOR) because of it - an AI orchestration research tool to enable mass data model research & generation.

@@ -2,7 +2,7 @@
 title: AIOR
 website: https://aior.app
 openSource: null
-videoDemoId: sfRIqFPEytg
+videoDemoId: FgFXpV4-jvc
 layout: ../layouts/MarkdownHighlightsLayout.astro
 subtitle: AI Orchestrated Research
 coverType: image

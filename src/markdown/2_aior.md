@@ -11,7 +11,7 @@ coverType: image
 
 **I wrote a blog post about using AIOR to research 1201 Indigenous dialects in 36 minutes: [Check it out!](https://land.org.au/blog/researching-1201-indigenous-dialects-in-36-minutes)**
 
-AIOR is researching tool for datasets where you specify an expected data model alongside user parameters.
+AIOR is a researching tool for datasets where you specify an expected data model alongside user parameters.
 
 AIOR will then use that information to perform autonomous researching tasks to retrieve the data you request and output in both a table and JSON data structure.
 

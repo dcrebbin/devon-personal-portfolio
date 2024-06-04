@@ -40,7 +40,7 @@ export const PROJECTS = [
     elevatorPitch: "Emoji recognition powered by Gemini",
     status: "Released",
     techStack: "Nextjs/Tailwind/Gemini API",
-    imageUrl: "https://imagedelivery.net/B-bofTeW0pZtEXxGfni94g/4a908d08-8d15-4edb-759b-605b56767d00/public",
+    imageUrl: "https://imagedelivery.net/B-bofTeW0pZtEXxGfni94g/d5cedc07-36cb-4818-1c09-edb810f67000/public",
     openSourceLink: "https://github.com/dcrebbin/gemini-emoji-guessing",
     link: "https://xn--wp9haaa.ws/",
   },
